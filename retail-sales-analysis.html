@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Retail Sales Analysis — Praneeth Kumar Reddy Pappu</title>
+  <title>Retail Sales Analysis & Dashboard — Praneeth Kumar Reddy Pappu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -14,9 +14,10 @@
       margin: auto;
       line-height: 1.6;
     }
-    h1 { font-size: 1.7rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
     h2 { font-size: 1.3rem; margin-top: 2rem; }
     p  { margin-bottom: 0.7rem; }
+    ul { margin-bottom: 1rem; }
     .tag { 
       display: inline-block;
       padding: 5px 10px;
@@ -35,49 +36,85 @@
 <h1>Retail Sales Analysis & Dashboard (Excel)</h1>
 
 <p><strong>Author:</strong> Praneeth Kumar Reddy Pappu</p>
-<p><strong>Tools Used:</strong> Excel, Pivot Tables, Charts, KPIs, Data Cleaning</p>
+<p><strong>Tools Used:</strong> Microsoft Excel, Pivot Tables, Pivot Charts, Slicers, Conditional Formatting</p>
 
 <h2>📌 Project Overview</h2>
 <p>
-This project focuses on analyzing retail sales data to uncover trends, patterns, 
-and business insights that help understand customer behavior, high-performing products, 
-and sales performance across segments.
+This project showcases an end-to-end Excel-based data analysis workflow for a fictional retail company. 
+It covers data cleaning, calculated fields, business analytics, and the creation of an interactive dashboard 
+to help track sales performance across regions, product categories, and sales representatives.
 </p>
 
-<h2>📂 Dataset</h2>
-<p>
-Retail sales CSV file containing:
+<h2>🎯 Objective</h2>
 <ul>
-  <li>Order Date</li>
-  <li>Product Category</li>
-  <li>Customer Segment</li>
-  <li>Sales, Profit, Quantity</li>
-  <li>Region</li>
+  <li>Clean and transform raw sales data</li>
+  <li>Perform business analysis using Excel formulas and pivot tables</li>
+  <li>Build an interactive dashboard with slicers and KPIs</li>
+  <li>Analyze performance by region, category, and sales reps</li>
 </ul>
-</p>
 
-<h2>🛠️ Steps Performed</h2>
-<p>
-✔ Data cleaning (removing nulls, correcting data types)<br>
-✔ Created date-based columns (Month, Quarter, Year)<br>
-✔ Created KPI summary (Sales, Profit, Avg Order Value)<br>
-✔ Built pivot tables for product & region performance<br>
-✔ Created an interactive Excel dashboard with slicers<br>
-✔ Added charts to show trends over time
-</p>
+<h2>📂 Dataset Structure</h2>
+<p>The dataset contains 8 sales records with the following fields:</p>
+<ul>
+  <li><strong>Order ID:</strong> Unique order identifier</li>
+  <li><strong>Order Date:</strong> Date of the order</li>
+  <li><strong>Region:</strong> Sales region</li>
+  <li><strong>Sales Rep:</strong> Salesperson name</li>
+  <li><strong>Product Category:</strong> Category of the product</li>
+  <li><strong>Product:</strong> Product name</li>
+  <li><strong>Units Sold:</strong> Quantity sold</li>
+  <li><strong>Unit Price:</strong> Price per unit</li>
+  <li><strong>Profit:</strong> Profit from the order</li>
+</ul>
+
+<h2>🧮 Calculated Columns</h2>
+<ul>
+  <li><strong>Total Sales:</strong> Units Sold × Unit Price</li>
+  <li><strong>Month:</strong> Extracted from Order Date using <code>=TEXT(OrderDate, "mmm yyyy")</code></li>
+  <li><strong>Profit Margin:</strong> Profit ÷ Total Sales</li>
+</ul>
+
+<h2>🛠️ Tools & Features Used</h2>
+<ul>
+  <li>Excel Tables (SalesTable)</li>
+  <li>Pivot Tables & Pivot Charts</li>
+  <li>Slicers for dashboard interactivity</li>
+  <li>Conditional Formatting</li>
+  <li>KPI card design for total sales, profit & margin</li>
+</ul>
 
 <h2>📊 Key Insights</h2>
-<p>
-• Highest sales came from <strong>West region</strong>.<br>
-• Furniture category showed lower profit margins.<br>
-• December had the highest monthly revenue.<br>
-• Top 20% of products contributed to almost 80% revenue (Pareto).
-</p>
+<ul>
+  <li><strong>Top-Performing Regions:</strong> Identified based on total sales.</li>
+  <li><strong>Most Profitable Products:</strong> Based on highest profit margins.</li>
+  <li><strong>Sales Rep Performance:</strong> Compared revenue and profitability by rep.</li>
+  <li><strong>Monthly Trends:</strong> Clear seasonal pattern visible through charts.</li>
+</ul>
+
+<h2>📈 Dashboard Preview</h2>
+<p>The Excel dashboard includes:</p>
+<ul>
+  <li>Interactive slicers (Region, Sales Rep, Category)</li>
+  <li>KPI Cards: Total Sales, Total Profit, Avg Profit Margin</li>
+  <li>Line Chart: Monthly Sales Trend</li>
+  <li>Bar Chart: Sales by Category</li>
+</ul>
+
+<h2>🏁 Skills Demonstrated</h2>
+<ul>
+  <li>Data Cleaning & Preprocessing</li>
+  <li>Dynamic Pivot Table Analysis</li>
+  <li>Dashboard Layout & Design</li>
+  <li>Business Insight Communication</li>
+  <li>Time-Based Trend Analysis</li>
+</ul>
 
 <h2>🔗 Project Links</h2>
 <p>
-<a href="https://github.com/praneethkumarreddypappu" target="_blank">GitHub Repository</a><br>
-<a href="../index.html">← Back to Portfolio</a>
+<a href="https://github.com/praneethkumarreddypappu/Retail-Sales-Analysis-and-Dashboard-in-Excel" target="_blank">
+GitHub Repository
+</a><br>
+<a href="./index.html">← Back to Portfolio</a>
 </p>
 
 </body>

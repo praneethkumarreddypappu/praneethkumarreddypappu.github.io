@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Praneeth Kumar Reddy Pappu — Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f5f7fb;
+      color: #1f2933;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1.5rem 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1rem;
+      color: #4b5563;
+    }
+    nav {
+      margin-top: 0.75rem;
+    }
+    nav a {
+      margin-right: 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #2563eb;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 8%;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e5e7eb;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+    .section p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+    .tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #eff3ff;
+      color: #1d4ed8;
+      border: 1px solid #d4ddff;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .project-card {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+    .project-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #111827;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
+    }
+    .project-links a {
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #2563eb;
+      margin-right: 0.75rem;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 8%;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Praneeth Kumar Reddy Pappu</h1>
+    <p>Data Analyst · SQL · Excel · Power BI · Python · Dashboards · Reporting</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I am a Data Analyst skilled in SQL, Excel, Power BI, and Python with hands-on project experience in 
+        retail analytics, churn prediction, fintech data analysis, and end-to-end reporting dashboards.
+      </p>
+      <p>
+        My work focuses on cleaning and analyzing complex datasets, automating reports, building dashboards, 
+        and delivering insights that support business decisions.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2>Skills & Tools</h2>
+      <p><strong>Data Analysis & BI:</strong> Power BI, Excel, DAX, Google Sheets</p>
+      <p><strong>Databases & SQL:</strong> SQL Server, MySQL, Joins, Window Functions</p>
+      <p><strong>Python:</strong> Pandas, Matplotlib, Scikit-learn（for ML basics）</p>
+      <p><strong>Analytics:</strong> Sales analytics, churn analytics, fintech analytics, IPL analysis</p>
+
+      <div class="tag-list">
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Python</span>
+        <span class="tag">ETL</span>
+        <span class="tag">Data Cleaning</span>
+        <span class="tag">Dashboarding</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Highlighted Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <h3>Retail Sales Analysis & Dashboard (Excel)</h3>
+          <p>Performed complete retail sales analysis using Excel, including cleaning, KPI creation, and dashboard building for business insights.</p>
+          <div class="tag-list">
+            <span class="tag">Excel</span><span class="tag">Dashboard</span><span class="tag">Retail</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <h3>SQL Data Cleaning & EDA Project</h3>
+          <p>Cleaned, transformed, and analyzed raw datasets using SQL with joins, window functions, and EDA queries.</p>
+          <div class="tag-list">
+            <span class="tag">SQL</span><span class="tag">EDA</span><span class="tag">Data Cleaning</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <h3>Fintech Data Analysis</h3>
+          <p>Analyzed a fintech dataset focusing on transactions, user behavior, and performance trends.</p>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Fintech</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <h3>IPL Analysis Project</h3>
+          <p>Explored IPL data to extract insights from players, teams, match performance, and winning factors.</p>
+          <div class="tag-list">
+            <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Sports Analytics</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
+          <p>Analyzed pizza store sales using SQL and visualized performance metrics in Tableau.</p>
+          <div class="tag-list">
+            <span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Sales Analytics</span>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+          <h3>Customer Churn Prediction (Python + ML)</h3>
+          <p>Built churn prediction model using Random Forest, feature engineering, and Power BI insights.</p>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Churn</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> praneethkumarreddy952@gmail.com</p>
+      <p><strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a>
+      </p>
+      <p><strong>GitHub:</strong> 
+        <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Praneeth Kumar Reddy Pappu · Data Analyst
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

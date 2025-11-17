@@ -13,7 +13,7 @@
 
     body {
       font-family: "Inter", sans-serif;
-      background: #f3f4f6;
+      background: #f5f7fb;
       color: #0f172a;
       line-height: 1.6;
     }
@@ -27,12 +27,13 @@
       position: sticky;
       top: 0;
       z-index: 20;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
       max-width: 1150px;
       margin: 0 auto;
-      padding: 0.8rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -41,22 +42,40 @@
     .nav-left {
       font-weight: 600;
       font-size: 1rem;
-      color: #111827;
+      color: #0f172a;
     }
 
     .nav-links a {
       margin-left: 1.4rem;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #4b5563;
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      border-radius: 999px;
+      transition: width 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: #2563eb;
+      color: #1d4ed8;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
     .hero-wrapper {
-      background: linear-gradient(135deg, #0b1120, #111827);
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
       color: #ffffff;
       padding: 3.2rem 1.5rem 3.4rem;
       box-shadow: 0 14px 36px rgba(15,23,42,0.6);
@@ -80,28 +99,28 @@
     }
 
     .hero-kicker {
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #a5b4fc;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     .hero-title {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 500;
       color: #c7d2fe;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .hero-desc {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: #e5e7eb;
       max-width: 560px;
     }
@@ -120,20 +139,22 @@
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 500;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.45);
     }
 
     .btn-primary:hover { background: #1d4ed8; }
 
     .btn-outline {
       border-radius: 999px;
-      border: 1px solid #4b5563;
+      border: 1px solid #64748b;
       color: #e5e7eb;
       padding: 0.7rem 1.5rem;
       font-size: 0.9rem;
       font-weight: 500;
+      background: rgba(15,23,42,0.6);
     }
 
-    .btn-outline:hover { border-color: #9ca3af; }
+    .btn-outline:hover { border-color: #e5e7eb; }
 
     .hero-photo {
       flex: 0 0 230px;
@@ -147,8 +168,8 @@
       height: 210px;
       border-radius: 50%;
       padding: 6px;
-      background: conic-gradient(from 180deg, #2563eb, #22c1c3, #6366f1, #2563eb);
-      box-shadow: 0 12px 32px rgba(15,23,42,0.9);
+      background: conic-gradient(from 180deg, #22c1c3, #2563eb, #6366f1, #22c1c3);
+      box-shadow: 0 14px 40px rgba(15,23,42,0.9);
       position: relative;
     }
 
@@ -157,20 +178,19 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      background: #0f172a;
+      background: #020617;
     }
 
-    /* small overlay to soften text/logo on shirt */
     .hero-photo-inner::after {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: 12%;
+      bottom: 10%;
       transform: translateX(-50%);
       width: 75%;
       height: 22%;
       border-radius: 999px;
-      background: linear-gradient(to bottom, rgba(15,23,42,0), rgba(15,23,42,0.32));
+      background: linear-gradient(to bottom, rgba(15,23,42,0), rgba(15,23,42,0.35));
       pointer-events: none;
     }
 
@@ -184,21 +204,34 @@
     .section {
       background: #ffffff;
       border-radius: 18px;
-      padding: 1.9rem 1.7rem;
+      padding: 1.9rem 1.7rem 1.8rem;
       margin-bottom: 2.2rem;
-      box-shadow: 0 12px 32px rgba(15,23,42,0.06);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.05);
       border: 1px solid #e5e7eb;
     }
 
     .section h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 600;
+      color: #1d4ed8;
       margin-bottom: 0.9rem;
-      color: #111827;
+      position: relative;
+      padding-bottom: 0.3rem;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 52px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #22c1c3);
     }
 
     .section p {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: #4b5563;
       margin-bottom: 0.6rem;
     }
@@ -241,10 +274,10 @@
     .tag {
       padding: 0.28rem 0.7rem;
       border-radius: 999px;
-      background: #e5f0ff;
-      color: #1d4ed8;
+      background: #e0f2fe;
+      color: #0369a1;
       font-size: 0.74rem;
-      border: 1px solid #c7d2fe;
+      border: 1px solid #bae6fd;
     }
 
     /* PROJECTS */
@@ -261,15 +294,15 @@
       border-radius: 16px;
       background: #f9fafb;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 9px 22px rgba(15,23,42,0.05);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.05);
       transition: 0.2s ease;
       color: inherit;
     }
 
     .project-card:hover {
       transform: translateY(-4px);
-      border-color: #9ca3af;
-      box-shadow: 0 14px 28px rgba(15,23,42,0.09);
+      border-color: #cbd5f5;
+      box-shadow: 0 16px 32px rgba(15,23,42,0.08);
       background: #ffffff;
     }
 
@@ -286,9 +319,9 @@
     }
 
     .project-tags .tag {
-      background: #e0f2fe;
-      border-color: #bae6fd;
-      color: #0369a1;
+      background: #dbeafe;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
     }
 
     /* EXPERIENCE */
@@ -393,7 +426,7 @@
     }
 
     .footer-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
     }
@@ -436,7 +469,6 @@
         flex-direction: column-reverse;
         text-align: center;
       }
-      .hero-text { align-items: center; }
       .hero-desc { margin: 0 auto; }
       .hero-actions { justify-content: center; }
     }
@@ -481,7 +513,6 @@
 
       <div class="hero-photo">
         <div class="hero-photo-inner">
-          <!-- your professional photo -->
           <img src="profile.jpg" alt="Praneeth Kumar Reddy Pappu">
         </div>
       </div>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Telecom Customer Churn Analysis — Praneeth Kumar Reddy Pappu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f7fb;
+      color: #1f2933;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.3rem; margin-top: 2rem; }
+    p  { margin-bottom: 0.7rem; }
+    ul { margin-bottom: 1rem; }
+    pre {
+      background: #eee;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    a { color: #2563eb; }
+  </style>
+</head>
+
+<body>
+
+<h1>Telecom Customer Churn Analysis — SQL Server, Python & Power BI</h1>
+
+<p><strong>Author:</strong> Praneeth Kumar Reddy Pappu</p>
+<p><strong>Tools Used:</strong> SQL Server, Power BI, Python (scikit-learn), Excel</p>
+
+<h2>📌 Project Overview</h2>
+<p>
+This end-to-end analytics project analyzes telecom customer churn using SQL ETL, Power BI visualizations, 
+and machine learning (Random Forest) to predict which customers are likely to churn.  
+It provides business insights through dashboards and predictive modeling.
+</p>
+
+<h2>🎯 Objective</h2>
+<p>
+Understand the drivers behind customer churn and build a predictive model that helps the business 
+identify high-risk customers for proactive retention.
+</p>
+
+<h2>🧩 Key Features</h2>
+<ul>
+  <li>ETL pipeline using SQL Server</li>
+  <li>Interactive Power BI dashboards</li>
+  <li>Machine Learning prediction using Random Forest</li>
+  <li>Drill-through reports for churn reasons</li>
+  <li>End-to-end flow from raw CSV → SQL → BI → ML</li>
+</ul>
+
+<h2>📊 Power BI Dashboards</h2>
+
+<h3>1️⃣ Summary Dashboard</h3>
+<ul>
+  <li>Total Customers, New Joiners, Total Churn, Churn Rate%</li>
+  <li>Demographics (Gender, Age Group)</li>
+  <li>Account Info (Payment Method, Contract Type, Tenure)</li>
+  <li>Geography (Top 5 States by Churn)</li>
+  <li>Services Overview (Internet Type, Churn %)</li>
+</ul>
+
+<h3>2️⃣ Churn Reason Dashboard</h3>
+<ul>
+  <li>Drill-through for churn reasons by customer</li>
+  <li>Shows exact drivers of churn (Pricing, Service, Competitor, etc.)</li>
+</ul>
+
+<h3>3️⃣ Prediction Dashboard</h3>
+<ul>
+  <li>Customer ID, Monthly Charge, Total Revenue, Refunds, Referrals</li>
+  <li>Demographics & account details</li>
+  <li>Predicted churn probability</li>
+  <li>State-wise churn prediction map</li>
+</ul>
+
+<h2>🛠 Tools & Technologies</h2>
+<ul>
+  <li><strong>SQL Server:</strong> ETL, data cleaning, table creation, views</li>
+  <li><strong>Power BI:</strong> DAX, data modeling, dashboard creation</li>
+  <li><strong>Python (scikit-learn):</strong> Random Forest modeling</li>
+  <li><strong>Excel:</strong> initial data review and prediction output export</li>
+</ul>
+
+<h2>🔄 Workflow Overview</h2>
+
+<h3>1️⃣ ETL & SQL Processing</h3>
+<ul>
+  <li>Loaded CSVs into <strong>stg_Churn</strong> staging table</li>
+  <li>Cleaned NULLs using <code>ISNULL()</code></li>
+  <li>Created production table <strong>prod_Churn</strong></li>
+  <li>Created SQL Views:
+    <ul>
+      <li><strong>vw_ChurnData</strong> — Churned vs Stayed</li>
+      <li><strong>vw_JoinData</strong> — Newly joined customers</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2️⃣ Power BI Transformations</h3>
+<ul>
+  <li>Added Churn Status (1 = Churned, 0 = Stayed)</li>
+  <li>Created Age Group & Tenure Group columns</li>
+  <li>Binned Monthly Charges</li>
+  <li>Unpivoted service columns for detailed analysis</li>
+</ul>
+
+<h3>3️⃣ Power BI DAX Measures</h3>
+<pre>
+Total Customers = COUNT(prod_Churn[Customer_ID])
+New Joiners = CALCULATE(COUNT(prod_Churn[Customer_ID]), prod_Churn[Customer_Status] = "Joined")
+Total Churn = SUM(prod_Churn[Churn Status])
+Churn Rate = [Total Churn] / [Total Customers]
+</pre>
+
+<h3>4️⃣ Machine Learning (Python)</h3>
+<ul>
+  <li>Dropped irrelevant columns</li>
+  <li>Label encoded categorical variables</li>
+  <li>Train-test split (80% / 20%)</li>
+  <li>Random Forest classifier trained</li>
+  <li>Evaluated via Confusion Matrix & Classification Report</li>
+  <li>Predicted churn risk for new customers</li>
+</ul>
+
+<h2>📈 Results</h2>
+<ul>
+  <li>Clear churn patterns across demographics, geography, services, and tenure</li>
+  <li>Identified top reasons for churn</li>
+  <li>Random Forest model successfully predicted potential churners</li>
+  <li>Actionable insights for retention strategy</li>
+</ul>
+
+<h2>🔗 Project Links</h2>
+<p>
+<a href="https://github.com/praneethkumarreddypappu/Customer-Churn-Prediction-Analytics" target="_blank">
+GitHub Repository
+</a><br>
+<a href="./index.html">← Back to Portfolio</a>
+</p>
+
+</body>
+</html>

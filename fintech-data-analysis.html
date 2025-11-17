@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fintech Sales & Revenue Analytics (Remittance) — Praneeth Kumar Reddy Pappu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f7fb;
+      color: #1f2933;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.3rem; margin-top: 2rem; }
+    p  { margin-bottom: 0.7rem; }
+    ul { margin-bottom: 1rem; }
+    .tag { 
+      display: inline-block;
+      padding: 5px 10px;
+      background: #e8edff;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    a { color: #2563eb; }
+    pre {
+      background: #eee;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>End-to-End Sales & Revenue Analytics (Fintech Remittance Case Study – 2025)</h1>
+
+<p><strong>Author:</strong> Praneeth Kumar Reddy Pappu</p>
+<p><strong>Tools Used:</strong> Excel, PostgreSQL, Python (Pandas, SQLAlchemy), SQL, Power BI</p>
+
+<h2>📌 Project Overview</h2>
+<p>
+This project simulates the daily work of a Data Analyst at a fintech/remittance company 
+(similar to Intermex). The goal was to build an end-to-end analytics pipeline starting 
+from raw CSV files, loading them into a PostgreSQL database, cleaning and transforming 
+the data with SQL, validating outputs in Excel, and finally visualizing key business 
+metrics in Power BI.
+</p>
+<p>
+The final deliverable is an interactive dashboard that tracks sales performance, fee 
+revenue, agent performance, customer trends, and payment method preferences.
+</p>
+
+<h2>📂 Dataset & Data Model</h2>
+<p>The dataset is synthetic but modeled on real-world remittance data.</p>
+
+<ul>
+  <li><strong>transactions.csv</strong> – transaction-level fact table</li>
+  <li><strong>customers.csv</strong> – customer demographics & signup data</li>
+  <li><strong>agents.csv</strong> – agent network information</li>
+  <li><strong>calendar_2025.csv</strong> – date dimension for Jan–Dec 2025</li>
+  <li><strong>sales_targets.csv</strong> – monthly sales & revenue targets</li>
+</ul>
+
+<p><strong>Star schema:</strong></p>
+<ul>
+  <li><strong>Fact:</strong> transactions</li>
+  <li><strong>Dimensions:</strong> customers, agents, calendar_2025, sales_targets</li>
+</ul>
+
+<h2>🛠️ Process & Workflow</h2>
+
+<h3>1️⃣ Quick QA in Excel</h3>
+<ul>
+  <li>Loaded CSVs into Excel for initial validation.</li>
+  <li>Checked for duplicates, nulls, and formatting issues.</li>
+  <li>Built quick pivots for:
+    <ul>
+      <li>Revenue by Month</li>
+      <li>Transactions by Country</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2️⃣ CSV → PostgreSQL (via Jupyter)</h3>
+<ul>
+  <li>Created a PostgreSQL database: <code>financial_db</code></li>
+  <li>Used <strong>Pandas + SQLAlchemy</strong> in Jupyter to load all CSVs.</li>
+  <li>Ensured consistent datatypes for dates, integers, and currency fields.</li>
+</ul>
+
+<h3>3️⃣ SQL Cleaning & Transformation</h3>
+<ul>
+  <li>Standardized column names.</li>
+  <li>Handled missing values and removed duplicates.</li>
+  <li>Converted status and flags into readable labels 
+    (e.g., <em>Completed</em>, <em>Failed</em>).</li>
+  <li>Created summary tables for key KPIs:
+    <ul>
+      <li>Total Fee Revenue</li>
+      <li>Transaction Volume</li>
+      <li>Average Transaction Value</li>
+      <li>Agent & regional performance</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>4️⃣ EDA & KPI Queries (SQL)</h3>
+<ul>
+  <li>Monthly fee revenue trends</li>
+  <li>Agent performance (Actual vs Target)</li>
+  <li>Customer activity levels and retention</li>
+  <li>Payment method breakdown (card, bank, cash, etc.)</li>
+</ul>
+
+<h3>5️⃣ Cross-check in Excel</h3>
+<ul>
+  <li>Exported summary tables to Excel for QA.</li>
+  <li>Verified totals against database queries and Power BI visuals.</li>
+</ul>
+
+<h3>6️⃣ Power BI Dashboard</h3>
+<ul>
+  <li>Imported cleaned tables into Power BI in a star schema.</li>
+  <li>Built DAX measures for:
+    <ul>
+      <li>Fee Revenue</li>
+      <li>Transaction Volume</li>
+      <li>Average Transaction Value</li>
+      <li>Active Customers</li>
+    </ul>
+  </li>
+  <li>Designed a clean, recruiter-friendly dashboard.</li>
+</ul>
+
+<h2>📊 Dashboard Highlights</h2>
+
+<p><strong>Top KPIs:</strong></p>
+<ul>
+  <li>Total Fee Revenue</li>
+  <li>Total Transaction Volume</li>
+  <li>Average Transaction Value</li>
+  <li>Active Customers</li>
+</ul>
+
+<p><strong>Visuals:</strong></p>
+<ul>
+  <li>Line chart — Monthly Fee Revenue trend</li>
+  <li>Bar chart — Top Agents by Revenue</li>
+  <li>Gauge — Revenue vs Target</li>
+  <li>Map / Treemap — Revenue by Country/State</li>
+  <li>Donut — Payment Method distribution</li>
+  <li>Stacked bar — Transaction Status (Completed / Failed / Refunded)</li>
+</ul>
+
+<p><strong>Filters/Slicers:</strong> Date, Agent, Country, Customer Type, Channel</p>
+
+<h2>📁 Deliverables in Repository</h2>
+<ul>
+  <li><strong>notebooks/load_to_postgres.ipynb</strong> — ETL from CSV/Excel → PostgreSQL</li>
+  <li><strong>sql/01_data_cleaning.sql</strong> — cleaning & transformation logic</li>
+  <li><strong>sql/02_eda_kpis.sql</strong> — KPI and EDA queries</li>
+  <li><strong>excel/financial_data_analysis.xlsx</strong> — QA pivots & checks</li>
+  <li><strong>powerbi/financial_dashboard.pbix</strong> — final dashboard</li>
+  <li><strong>images/dashboard_preview.png</strong> — dashboard screenshot</li>
+</ul>
+
+<h2>📌 Key Business Insights</h2>
+<ul>
+  <li>A small group of agents drives a large share of fee revenue → opportunity for focused incentives and coaching.</li>
+  <li>Card and bank transfers generate higher revenue than cash transactions.</li>
+  <li>Americas dominate transaction volume, while underrepresented regions show growth potential.</li>
+  <li>Failed/refunded transactions highlight friction points in payments flow and agent operations.</li>
+</ul>
+
+<h2>🚀 How to Run the Project</h2>
+
+<ol>
+  <li><strong>Database Setup</strong>
+    <ul>
+      <li>Create PostgreSQL database: <code>financial_db</code></li>
+      <li>Run <code>notebooks/load_to_postgres.ipynb</code> to load CSVs into the DB</li>
+    </ul>
+  </li>
+  <li><strong>Run SQL Scripts</strong>
+    <ul>
+      <li>Execute <code>sql/01_data_cleaning.sql</code> for cleaning & transformations</li>
+      <li>Execute <code>sql/02_eda_kpis.sql</code> for KPIs and summary tables</li>
+    </ul>
+  </li>
+  <li><strong>Validation (Optional)</strong>
+    <ul>
+      <li>Open <code>excel/financial_data_analysis.xlsx</code> to review pivot checks</li>
+    </ul>
+  </li>
+  <li><strong>Open Power BI Dashboard</strong>
+    <ul>
+      <li>Open <code>powerbi/financial_dashboard.pbix</code> and connect to <code>financial_db</code> or use exported summary tables</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>🔗 Project Links</h2>
+<p>
+<a href="https://github.com/praneethkumarreddypappu/fintech-data-analysis" target="_blank">
+GitHub Repository
+</a><br>
+<a href="./index.html">← Back to Portfolio</a>
+</p>
+
+</body>
+</html>

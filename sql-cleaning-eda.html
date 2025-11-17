@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SQL Data Cleaning & EDA — Layoffs Dataset | Praneeth Kumar Reddy Pappu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f7fb;
+      color: #1f2933;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.3rem; margin-top: 2rem; }
+    p  { margin-bottom: 0.7rem; }
+    ul { margin-bottom: 1rem; }
+    .tag { 
+      display: inline-block;
+      padding: 5px 10px;
+      background: #e8edff;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    pre {
+      background: #eee;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    a { color: #2563eb; }
+  </style>
+</head>
+
+<body>
+
+<h1>SQL Data Cleaning & Exploratory Data Analysis (EDA) — Layoffs Dataset</h1>
+
+<p><strong>Author:</strong> Praneeth Kumar Reddy Pappu</p>
+<p><strong>Tools Used:</strong> MySQL / SQL Server, Joins, Window Functions, CTEs, Data Cleaning</p>
+
+<h2>📌 Project Overview</h2>
+<p>
+This project demonstrates the end-to-end SQL workflow for cleaning raw data and performing 
+Exploratory Data Analysis (EDA) using a real-world layoffs dataset.  
+The goal was to convert messy, inconsistent data into a structured format and extract meaningful trends 
+about layoffs across industries, companies, funding stages, and countries.
+</p>
+
+<h2>📂 Dataset Description</h2>
+<p>The repository includes:</p>
+
+<ul>
+  <li><strong>data/raw/layoffs_sample.csv</strong> — sample raw dataset</li>
+  <li><strong>data/cleaned/layoffs_cleaned.csv</strong> — cleaned export from SQL</li>
+</ul>
+
+<p><strong>Key columns:</strong> company, location, industry, total_laid_off, percentage_laid_off, 
+date, stage, country, funds_raised_millions</p>
+
+<h2>🧹 Data Cleaning Steps (SQL)</h2>
+<ul>
+  <li>Removed duplicate records</li>
+  <li>Handled NULL values in numeric and categorical fields</li>
+  <li>Standardized company and industry names</li>
+  <li>Corrected inconsistent date formats</li>
+  <li>Converted numerical fields to correct data types</li>
+  <li>Filtered out invalid rows (negative layoffs, invalid percentages)</li>
+</ul>
+
+<h2>🧪 Exploratory Data Analysis (EDA)</h2>
+<p>Performed using SQL queries:</p>
+
+<ul>
+  <li>Layoffs by industry</li>
+  <li>Layoffs by company</li>
+  <li>Layoffs by country & region</li>
+  <li>Month-wise and year-wise trend analysis</li>
+  <li>Percentage of workforce laid off across industries</li>
+  <li>Funding vs layoffs analysis (relationship between fundraising stage & layoffs)</li>
+</ul>
+
+<h2>🧩 Sample SQL Queries</h2>
+
+<p><strong>1️⃣ Remove duplicates</strong></p>
+<pre>
+DELETE FROM layoffs
+WHERE id NOT IN (
+    SELECT MIN(id)
+    FROM layoffs
+    GROUP BY company, date
+);
+</pre>
+
+<p><strong>2️⃣ Industry-wise total layoffs</strong></p>
+<pre>
+SELECT industry, SUM(total_laid_off) AS total
+FROM layoffs
+GROUP BY industry
+ORDER BY total DESC;
+</pre>
+
+<p><strong>3️⃣ Yearly layoffs trend</strong></p>
+<pre>
+SELECT YEAR(date) AS year, SUM(total_laid_off) AS total
+FROM layoffs
+GROUP BY year
+ORDER BY year;
+</pre>
+
+<h2>📊 Key Insights</h2>
+<ul>
+  <li><strong>Tech and Retail</strong> industries reported the highest layoffs.</li>
+  <li><strong>2022–2023</strong> saw a major global spike in workforce reductions.</li>
+  <li>Startups in **late funding stages** had significantly higher layoff percentages.</li>
+  <li>Countries like the **US and India** showed the highest layoff activity.</li>
+</ul>
+
+<h2>📁 How to Reproduce</h2>
+<ul>
+  <li>Import the raw dataset into SQL Server or MySQL</li>
+  <li>Run <code>sql/data_cleaning.sql</code> for the cleaning pipeline</li>
+  <li>Run <code>sql/eda_queries.sql</code> to reproduce the analysis</li>
+  <li>Compare results with the cleaned CSV included in the repo</li>
+</ul>
+
+<h2>🔗 Project Links</h2>
+<p>
+<a href="https://github.com/praneethkumarreddypappu/SQL_Cleaning_EDA_Project" target="_blank">
+GitHub Repository
+</a><br>
+<a href="./index.html">← Back to Portfolio</a>
+</p>
+
+</body>
+</html>

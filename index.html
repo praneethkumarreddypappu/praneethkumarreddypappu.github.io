@@ -18,7 +18,7 @@
       line-height: 1.6;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
 
     /* NAVBAR */
     header {
@@ -30,9 +30,9 @@
     }
 
     .nav {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -45,9 +45,9 @@
     }
 
     .nav-links a {
-      margin-left: 1.3rem;
-      font-size: 0.9rem;
-      color: #374151;
+      margin-left: 1.4rem;
+      font-size: 0.92rem;
+      color: #4b5563;
     }
 
     .nav-links a:hover {
@@ -58,12 +58,14 @@
     .hero-wrapper {
       background: linear-gradient(135deg, #0b1120, #111827);
       color: #ffffff;
-      padding: 3.5rem 1.5rem 3rem;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.4);
+      padding: 3.2rem 1.5rem 3.4rem;
+      box-shadow: 0 14px 36px rgba(15,23,42,0.6);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
     }
 
     .hero {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
       display: flex;
       gap: 3rem;
@@ -77,62 +79,61 @@
       min-width: 0;
     }
 
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      margin-bottom: 0.4rem;
+    }
+
     .hero-title {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
 
     .hero-subtitle {
       font-size: 1.1rem;
       font-weight: 500;
-      color: #a5b4fc;
-      margin-bottom: 0.8rem;
+      color: #c7d2fe;
+      margin-bottom: 1rem;
     }
 
     .hero-desc {
       font-size: 0.98rem;
       color: #e5e7eb;
-      max-width: 540px;
+      max-width: 560px;
     }
 
     .hero-actions {
-      margin-top: 1.3rem;
+      margin-top: 1.4rem;
       display: flex;
-      gap: 0.75rem;
       flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .btn-primary {
       background: #2563eb;
       color: #ffffff;
-      padding: 0.7rem 1.4rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: 500;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
     }
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
+    .btn-primary:hover { background: #1d4ed8; }
 
     .btn-outline {
       border-radius: 999px;
       border: 1px solid #4b5563;
       color: #e5e7eb;
-      padding: 0.7rem 1.4rem;
+      padding: 0.7rem 1.5rem;
       font-size: 0.9rem;
       font-weight: 500;
-      cursor: pointer;
-      display: inline-block;
     }
 
-    .btn-outline:hover {
-      border-color: #9ca3af;
-    }
+    .btn-outline:hover { border-color: #9ca3af; }
 
     .hero-photo {
       flex: 0 0 230px;
@@ -146,8 +147,9 @@
       height: 210px;
       border-radius: 50%;
       padding: 6px;
-      background: conic-gradient(from 180deg, #2563eb, #38bdf8, #6366f1, #2563eb);
-      box-shadow: 0 12px 30px rgba(15,23,42,0.7);
+      background: conic-gradient(from 180deg, #2563eb, #22c1c3, #6366f1, #2563eb);
+      box-shadow: 0 12px 32px rgba(15,23,42,0.9);
+      position: relative;
     }
 
     .hero-photo-inner img {
@@ -156,48 +158,61 @@
       border-radius: 50%;
       object-fit: cover;
       background: #0f172a;
-      /* simple overlay to subtly soften shirt text */
-      position: relative;
     }
 
+    /* small overlay to soften text/logo on shirt */
+    .hero-photo-inner::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 12%;
+      transform: translateX(-50%);
+      width: 75%;
+      height: 22%;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, rgba(15,23,42,0), rgba(15,23,42,0.32));
+      pointer-events: none;
+    }
+
+    /* MAIN LAYOUT */
     main {
-      max-width: 1100px;
-      margin: 2.5rem auto 3rem;
+      max-width: 1150px;
+      margin: 2.6rem auto 3.2rem;
       padding: 0 1.5rem;
     }
 
     .section {
       background: #ffffff;
       border-radius: 18px;
-      padding: 1.8rem 1.6rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.06);
+      padding: 1.9rem 1.7rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 32px rgba(15,23,42,0.06);
       border: 1px solid #e5e7eb;
     }
 
     .section h2 {
       font-size: 1.4rem;
       font-weight: 600;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
       color: #111827;
     }
 
     .section p {
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       color: #4b5563;
       margin-bottom: 0.6rem;
     }
 
-    /* WHAT I DO CARDS */
+    /* WHAT I DO */
     .three-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
     }
 
     .pill-card {
-      padding: 1rem 1rem 1.1rem;
+      padding: 1.1rem 1.1rem 1.2rem;
       border-radius: 16px;
       background: #f9fafb;
       border: 1px solid #e5e7eb;
@@ -205,7 +220,7 @@
 
     .pill-card h3 {
       font-size: 1rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
       color: #111827;
     }
 
@@ -220,19 +235,19 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
 
     .tag {
-      padding: 0.3rem 0.7rem;
+      padding: 0.28rem 0.7rem;
       border-radius: 999px;
       background: #e5f0ff;
       color: #1d4ed8;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       border: 1px solid #c7d2fe;
     }
 
-    /* PROJECTS GRID */
+    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -242,11 +257,11 @@
 
     .project-card {
       display: block;
-      padding: 1.2rem 1.1rem;
+      padding: 1.25rem 1.1rem;
       border-radius: 16px;
       background: #f9fafb;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 8px 22px rgba(15,23,42,0.04);
+      box-shadow: 0 9px 22px rgba(15,23,42,0.05);
       transition: 0.2s ease;
       color: inherit;
     }
@@ -254,13 +269,13 @@
     .project-card:hover {
       transform: translateY(-4px);
       border-color: #9ca3af;
-      box-shadow: 0 14px 28px rgba(15,23,42,0.08);
+      box-shadow: 0 14px 28px rgba(15,23,42,0.09);
       background: #ffffff;
     }
 
     .project-card h3 {
       font-size: 1.02rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
       color: #111827;
     }
 
@@ -276,13 +291,144 @@
       color: #0369a1;
     }
 
-    /* CONTACT / FOOTER */
-    footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 1.4rem 1.5rem 2rem;
-      text-align: center;
+    /* EXPERIENCE */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .timeline-card {
+      padding: 1.25rem 1.1rem 1.3rem;
+      border-radius: 16px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+      color: #111827;
+    }
+
+    .timeline-meta {
       font-size: 0.85rem;
       color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline ul {
+      padding-left: 1rem;
+      margin: 0;
+      list-style: disc;
+    }
+
+    .timeline li {
+      font-size: 0.88rem;
+      color: #4b5563;
+      margin-bottom: 0.25rem;
+    }
+
+    /* EDUCATION */
+    .edu-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+      margin-top: 0.6rem;
+    }
+
+    .edu-card {
+      padding: 1.2rem 1.1rem 1.25rem;
+      border-radius: 16px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .edu-degree {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-school {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1d4ed8;
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-gpa {
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    /* CONTACT / FOOTER */
+    #contact p a {
+      color: #2563eb;
+    }
+
+    footer {
+      margin-top: 0;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 2.3rem 1.5rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.5fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-inner p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-links a {
+      display: inline-block;
+      margin-right: 0.8rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+
+    .footer-bottom {
+      max-width: 1150px;
+      margin: 1.4rem auto 0;
+      border-top: 1px solid #1f2937;
+      padding-top: 0.9rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
@@ -290,15 +436,9 @@
         flex-direction: column-reverse;
         text-align: center;
       }
-      .hero-text {
-        align-items: center;
-      }
-      .hero-desc {
-        margin: 0 auto;
-      }
-      .hero-actions {
-        justify-content: center;
-      }
+      .hero-text { align-items: center; }
+      .hero-desc { margin: 0 auto; }
+      .hero-actions { justify-content: center; }
     }
   </style>
 </head>
@@ -312,7 +452,9 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -322,11 +464,13 @@
   <section class="hero-wrapper">
     <div class="hero">
       <div class="hero-text">
-        <div class="hero-subtitle">Data Analyst</div>
-        <h1 class="hero-title">I turn business data into clear, actionable insights.</h1>
+        <div class="hero-kicker">Data Analyst</div>
+        <h1 class="hero-title">Hi, I'm Praneeth.</h1>
+        <div class="hero-subtitle">I turn data into dashboards, insights, and better decisions.</div>
         <p class="hero-desc">
-          SQL, Power BI, Excel, and Python — I use these tools to clean data, build dashboards,
-          and help teams understand performance, customers, and opportunities.
+          I work with SQL, Power BI, Excel, and Python to clean data, build reports, and explain what the
+          numbers really mean for the business. My focus is on clear communication, reliable metrics,
+          and practical recommendations.
         </p>
 
         <div class="hero-actions">
@@ -337,8 +481,8 @@
 
       <div class="hero-photo">
         <div class="hero-photo-inner">
-          <!-- Make sure profile image exists at this path -->
-          <img src="images/profile.jpg" alt="Praneeth Kumar Reddy Pappu">
+          <!-- your professional photo -->
+          <img src="profile.jpg" alt="Praneeth Kumar Reddy Pappu">
         </div>
       </div>
     </div>
@@ -350,14 +494,14 @@
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm a Data Analyst with hands-on experience across SQL, Excel, Power BI, and Python.
-        I enjoy taking raw, messy datasets and turning them into dashboards and reports that are easy
-        for stakeholders to understand and act on.
+        I'm a Data Analyst with a background in Computer Science and a Master's in Data Science & Analytics.
+        I enjoy working end-to-end on data problems — from cleaning and structuring raw data to building
+        dashboards and explaining insights to non-technical stakeholders.
       </p>
       <p>
-        My projects cover retail sales, layoffs analytics, fintech transaction data, IPL cricket analytics,
-        pizza sales, and telecom customer churn — giving me practice with both business-focused metrics
-        and technical implementation.
+        My projects and experience span retail sales, layoffs analytics, fintech transactions, IPL cricket data,
+        pizza sales, and telecom churn. I’m comfortable using SQL, Power BI, Excel, and Python together to
+        answer real business questions and support decision-making.
       </p>
     </section>
 
@@ -366,24 +510,24 @@
       <h2>What I Do</h2>
       <div class="three-grid">
         <div class="pill-card">
-          <h3>Data Cleaning & SQL Analytics</h3>
+          <h3>Data Cleaning & SQL Analysis</h3>
           <p>
-            Write queries to clean, join, and transform data; create reusable views;
-            and answer business questions using SQL.
+            Clean, join, and transform data using SQL and Excel; remove inconsistencies;
+            and build queries that answer concrete business questions.
           </p>
         </div>
         <div class="pill-card">
           <h3>Dashboards & Reporting</h3>
           <p>
-            Build clear dashboards in Power BI and Excel that highlight KPIs, trends,
-            and performance for non-technical stakeholders.
+            Design Power BI and Excel dashboards that highlight KPIs, trends, and performance
+            for leadership, operations, and non-technical teams.
           </p>
         </div>
         <div class="pill-card">
           <h3>Insight Storytelling</h3>
           <p>
-            Summarize findings, explain why metrics move, and connect visuals to
-            real business decisions and actions.
+            Summarize findings in simple language, connect metrics to outcomes,
+            and support decisions with clear visuals and explanations.
           </p>
         </div>
       </div>
@@ -392,10 +536,10 @@
     <!-- SKILLS -->
     <section id="skills" class="section">
       <h2>Skills & Tools</h2>
-      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, DAX basics, interactive reports</p>
+      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, DAX basics, interactive reporting</p>
       <p><strong>Databases & SQL:</strong> SQL Server, MySQL, joins, CTEs, window functions, data cleaning</p>
-      <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn (for ML basics)</p>
-      <p><strong>Analytics Domains:</strong> Retail, layoffs, fintech, sports, pizza sales, telecom churn</p>
+      <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn (for machine learning basics)</p>
+      <p><strong>Analytics Domains:</strong> Retail, layoffs, fintech, sports analytics, pizza sales, telecom churn</p>
 
       <div class="skill-tags">
         <span class="tag">SQL</span>
@@ -407,6 +551,40 @@
         <span class="tag">Dashboards</span>
         <span class="tag">KPI Design</span>
         <span class="tag">Basic ML</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-card">
+          <div class="timeline-role">Data Analysis & Research Intern</div>
+          <div class="timeline-meta">Ecological Servants Project · Remote · Jul 2025 – Present</div>
+          <ul>
+            <li>Manage and analyze environmental program data (100+ entries monthly) to support reporting and strategic decisions.</li>
+            <li>Design interactive dashboards in Excel, Google Sheets, and Power BI to visualize program reach, engagement, and outcomes.</li>
+            <li>Write SQL queries to explore datasets, uncover trends, and provide actionable insights for community initiatives.</li>
+            <li>Track website and blog performance (10,000+ monthly visitors) and identify top content, drop-offs, and device usage.</li>
+            <li>Support social engagement and grant research by compiling audience trends and funder alignment data.</li>
+            <li>Collaborate with staff to streamline workflows and improve operational efficiency and returning visitors.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-role">Data Analyst Intern</div>
+          <div class="timeline-meta">ClobData · Bangalore, India · Jan 2022 – Jul 2023</div>
+          <ul>
+            <li>Cleaned, validated, and standardized large datasets in Excel and SQL to improve the quality of business reports.</li>
+            <li>Wrote SQL queries to extract, filter, and analyze data from relational databases for client reporting.</li>
+            <li>Assisted in designing and maintaining Power BI dashboards tracking sales, customer engagement, and efficiency KPIs.</li>
+            <li>Prepared weekly and monthly Excel reports, improving visibility into trends for stakeholders.</li>
+            <li>Worked with senior analysts and business teams to translate requirements into data-driven insights.</li>
+            <li>Documented processes and reporting standards to support knowledge sharing and team efficiency.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -490,23 +668,63 @@
       </div>
     </section>
 
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="edu-list">
+
+        <div class="edu-card">
+          <div class="edu-degree">Master of Science – Data Science & Analytics</div>
+          <div class="edu-school">Florida Atlantic University</div>
+          <div class="edu-meta">Boca Raton, FL · Aug 2023 – May 2025 (Expected)</div>
+          <div class="edu-gpa">GPA: 3.86 / 4.0</div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Technology – Computer Science & Information Technology</div>
+          <div class="edu-school">Siddhartha Institute of Engineering and Technology</div>
+          <div class="edu-meta">Puttur, India · 2019 – 2023</div>
+          <div class="edu-gpa">GPA: 3.26 / 4.0</div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>If you'd like to talk about opportunities or projects, feel free to reach out.</p>
-      <p><strong>Email:</strong> praneethkumarreddy952@gmail.com</p>
-      <p><strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a>
-      </p>
-      <p><strong>GitHub:</strong>
-        <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a>
-      </p>
+      <p>If you'd like to discuss opportunities or projects, feel free to reach out.</p>
+      <p><strong>Email:</strong> <a href="mailto:praneethkumarreddy952@gmail.com">praneethkumarreddy952@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a></p>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    © <span id="year"></span> Praneeth Kumar Reddy Pappu · Data Analyst
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Praneeth Kumar Reddy Pappu</div>
+        <p>Data Analyst focused on clean data, clear dashboards, and practical insights for decision-makers.</p>
+      </div>
+      <div>
+        <div class="footer-title">Connect</div>
+        <div class="footer-links">
+          <a href="https://github.com/praneethkumarreddypappu" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">LinkedIn</a>
+          <a href="mailto:praneethkumarreddy952@gmail.com">Email</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Based In</div>
+        <p>Boca Raton, FL · Open to Remote & Hybrid Roles</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Praneeth Kumar Reddy Pappu. All rights reserved.
+    </div>
   </footer>
 
   <script>

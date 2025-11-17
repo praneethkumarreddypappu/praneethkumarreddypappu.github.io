@@ -4,255 +4,279 @@
   <meta charset="UTF-8" />
   <title>Praneeth Kumar Reddy Pappu — Data Analyst Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: #f5f7fb;
+      font-family: "Inter", sans-serif;
+      background: #f4f7fb;
       color: #1f2933;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* HEADER */
-    header {
-      background: white;
-      padding: 2rem 8%;
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb 40%, #1e3a8a);
+      padding: 4rem 8%;
+      color: white;
       text-align: center;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
     }
-    header h1 {
-      font-size: 2rem;
+
+    .hero h1 {
+      font-size: 2.4rem;
       font-weight: 700;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
     }
-    header p {
-      font-size: 1rem;
-      color: #4b5563;
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: auto;
     }
+
     nav {
-      margin-top: 1rem;
+      margin-top: 1.3rem;
     }
+
     nav a {
-      margin: 0 0.75rem;
-      color: #2563eb;
+      color: white;
+      margin: 0 0.9rem;
       font-size: 0.95rem;
       text-decoration: none;
+      opacity: 0.9;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { opacity: 1; }
 
-    /* MAIN */
+    /* MAIN LAYOUT */
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
+      max-width: 1100px;
+      margin: 2.5rem auto;
       padding: 0 8%;
     }
+
     .section {
       background: white;
-      padding: 1.8rem;
-      margin-bottom: 2.5rem;
-      border-radius: 0.75rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 20px;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 8px 16px rgba(15,23,42,0.05);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.05);
     }
+
     .section h2 {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
+      font-weight: 600;
       margin-bottom: 0.8rem;
-      color: #111827;
+      color: #0f172a;
     }
+
     .section p {
+      font-size: 1rem;
+      color: #475569;
       margin-bottom: 0.7rem;
-      color: #4b5563;
-      font-size: 0.95rem;
     }
 
     /* TAGS */
     .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.5rem;
-    }
-    .tag {
-      background: #eff3ff;
-      color: #1d4ed8;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      border: 1px solid #d4ddff;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
     }
 
-    /* PROJECTS */
+    .tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #bae6fd;
+    }
+
+    /* PROJECT GRID */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.2rem;
       margin-top: 1rem;
     }
+
     .project-card {
-      padding: 1.4rem;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 0.75rem;
-      transition: 0.2s;
-      cursor: pointer;
       text-decoration: none;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transition: 0.25s ease;
       color: inherit;
+      display: block;
     }
+
     .project-card:hover {
-      background: #eef2ff;
-      border-color: #c7d2fe;
-      transform: translateY(-2px);
+      transform: translateY(-6px);
+      border-color: #93c5fd;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+      background: #f8fafc;
     }
+
     .project-card h3 {
       font-size: 1.05rem;
-      margin-bottom: 0.3rem;
-      color: #111827;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
     }
+
     .project-card p {
       font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      color: #4b5563;
+      color: #475569;
+      margin-bottom: 0.7rem;
     }
 
     /* CONTACT */
     footer {
+      margin-top: 3rem;
       text-align: center;
       padding: 2rem 8%;
-      color: #6b7280;
       font-size: 0.85rem;
-    }
-
-    .resume-btn {
-      background: #2563eb;
-      color: white;
-      padding: 0.55rem 1rem;
-      display: inline-block;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-    }
-    .resume-btn:hover {
-      background: #1e40af;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Praneeth Kumar Reddy Pappu</h1>
-  <p>Data Analyst • SQL • Power BI • Excel • Python • Dashboards • ETL</p>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Praneeth Kumar Reddy Pappu</h1>
+    <p>Data Analyst | SQL • Power BI • Excel • Python • Dashboards • Reporting</p>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I'm a Data Analyst with hands-on experience building end-to-end analytics solutions — 
-      from cleaning and modeling data to designing dashboards and delivering insights that 
-      support real business decisions.
-    </p>
-    <p>
-      I enjoy working with SQL, Power BI, Excel, and Python to turn raw datasets into 
-      meaningful stories. My projects cover retail analytics, churn prediction, 
-      fintech transaction analysis, and performance dashboards.
-    </p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h2>Skills & Tools</h2>
-    <p><strong>Business Intelligence:</strong> Power BI, DAX, Excel, Dashboards</p>
-    <p><strong>Databases:</strong> SQL Server, MySQL, Joins, CTEs, Window Functions</p>
-    <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, Scikit-learn</p>
-    <p><strong>Analytics:</strong> Sales, Churn, Fintech, IPL, Customer Insights</p>
 
-    <div class="tag-list">
-      <span class="tag">SQL</span>
-      <span class="tag">Power BI</span>
-      <span class="tag">Excel</span>
-      <span class="tag">Python</span>
-      <span class="tag">ETL</span>
-      <span class="tag">Data Cleaning</span>
-      <span class="tag">DAX</span>
-      <span class="tag">Machine Learning</span>
-    </div>
-  </section>
+  <!-- MAIN CONTENT -->
+  <main>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2>Featured Projects</h2>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I'm a data-driven analyst who enjoys turning raw business data into 
+        meaningful insights. I work extensively with SQL, Power BI, Excel, and 
+        Python to build reports, dashboards, and predictive models.
+      </p>
+      <p>
+        My projects span across retail analytics, churn prediction, fintech 
+        revenue analysis, and sports analytics — always with a strong focus on 
+        clarity, accuracy, and storytelling.
+      </p>
+    </section>
 
-    <div class="projects-grid">
 
-      <a class="project-card" href="retail-sales-analysis.html">
-        <h3>Retail Sales Analysis (Excel)</h3>
-        <p>Interactive Excel dashboard analyzing sales, profit, and category performance.</p>
-        <div class="tag-list"><span class="tag">Excel</span><span class="tag">KPI</span></div>
-      </a>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2>Skills & Tools</h2>
 
-      <a class="project-card" href="sql-cleaning-eda.html">
-        <h3>SQL Data Cleaning & EDA — Layoffs Dataset</h3>
-        <p>End-to-end SQL cleaning, transformations, and exploratory trend analysis.</p>
-        <div class="tag-list"><span class="tag">SQL</span><span class="tag">EDA</span></div>
-      </a>
+      <p><strong>Business Intelligence:</strong> Power BI, DAX, Excel Dashboards</p>
+      <p><strong>Databases & SQL:</strong> SQL Server, MySQL, Joins, CTEs, Window Functions</p>
+      <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn</p>
+      <p><strong>Domains:</strong> Retail, Telecom, Fintech, Sports Analytics</p>
 
-      <a class="project-card" href="fintech-data-analysis.html">
-        <h3>Fintech Sales & Revenue Analytics</h3>
-        <p>ETL → SQL → Power BI pipeline analyzing remittance transactions.</p>
-        <div class="tag-list"><span class="tag">Power BI</span><span class="tag">SQL</span></div>
-      </a>
+      <div class="tag-list">
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Python</span>
+        <span class="tag">ETL</span>
+        <span class="tag">DAX</span>
+        <span class="tag">ML</span>
+        <span class="tag">Data Cleaning</span>
+      </div>
+    </section>
 
-      <a class="project-card" href="ipl-analysis.html">
-        <h3>IPL Analytics Dashboard (2008–2025)</h3>
-        <p>Team rankings, player stats, and match insights using Power BI.</p>
-        <div class="tag-list"><span class="tag">DAX</span><span class="tag">Sports</span></div>
-      </a>
 
-      <a class="project-card" href="pizza-sales-analysis.html">
-        <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
-        <p>Sales trends, KPI analysis, and category insights using SQL and Tableau.</p>
-        <div class="tag-list"><span class="tag">SQL</span><span class="tag">Tableau</span></div>
-      </a>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
 
-      <a class="project-card" href="customer-churn-analysis.html">
-        <h3>Customer Churn Prediction</h3>
-        <p>Machine learning model + Power BI dashboards to predict customer churn.</p>
-        <div class="tag-list"><span class="tag">Python</span><span class="tag">ML</span></div>
-      </a>
+      <div class="projects-grid">
 
-    </div>
-  </section>
+        <a class="project-card" href="retail-sales-analysis.html">
+          <h3>Retail Sales Analysis (Excel)</h3>
+          <p>Interactive Excel dashboard for sales performance, profits, and trends.</p>
+          <div class="tag-list"><span class="tag">Excel</span><span class="tag">Dashboard</span></div>
+        </a>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> praneethkumarreddy952@gmail.com</p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a></p>
+        <a class="project-card" href="sql-cleaning-eda.html">
+          <h3>SQL Cleaning & EDA — Layoffs Dataset</h3>
+          <p>Full SQL cleaning + exploratory analysis on global layoffs.</p>
+          <div class="tag-list"><span class="tag">SQL</span><span class="tag">EDA</span></div>
+        </a>
 
-    <a class="resume-btn" href="#" target="_blank">Download Resume</a>
-  </section>
+        <a class="project-card" href="fintech-data-analysis.html">
+          <h3>Fintech Revenue Analytics</h3>
+          <p>ETL → SQL → Power BI pipeline analyzing global remittance transactions.</p>
+          <div class="tag-list"><span class="tag">Power BI</span><span class="tag">SQL</span></div>
+        </a>
 
-</main>
+        <a class="project-card" href="ipl-analysis.html">
+          <h3>IPL Analytics Dashboard</h3>
+          <p>Power BI dashboard analyzing teams, performance, and 2025 season insights.</p>
+          <div class="tag-list"><span class="tag">DAX</span><span class="tag">Sports</span></div>
+        </a>
 
-<footer>
-  © <span id="year"></span> Praneeth Kumar Reddy Pappu · Data Analyst
-</footer>
+        <a class="project-card" href="pizza-sales-analysis.html">
+          <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
+          <p>SQL-based KPI extraction + interactive Tableau dashboard.</p>
+          <div class="tag-list"><span class="tag">SQL</span><span class="tag">Tableau</span></div>
+        </a>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        <a class="project-card" href="customer-churn-analysis.html">
+          <h3>Customer Churn Prediction</h3>
+          <p>Machine-learning churn model + Power BI visual insights.</p>
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">ML</span></div>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> praneethkumarreddy952@gmail.com</p>
+      <p><strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a>
+      </p>
+      <p><strong>GitHub:</strong> 
+        <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Praneeth Kumar Reddy Pappu · Data Analyst
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+

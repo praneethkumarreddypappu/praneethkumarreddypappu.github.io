@@ -1,449 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Praneeth Kumar Reddy Pappu — Data Analyst Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<title>Praneeth Kumar Reddy Pappu — Data Analyst Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* GLOBAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F5F5F3; /* Oyster white */
+  color: #25282B; /* Charcoal */
+  line-height: 1.6;
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: #F4F5F7; /* soft professional background */
-      color: #1B1B1B;      /* strong readable text */
-      line-height: 1.6;
-    }
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 1.2rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
 
-    a { text-decoration: none; }
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0F6E6E; /* Deep Teal */
+}
 
-    /* NAVBAR */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #DDDDDD;
-    }
+.navbar a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: #25282B;
+  font-weight: 500;
+}
 
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem 1.2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.navbar a:hover {
+  color: #0F6E6E;
+}
 
-    .brand {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #1B1B1B;
-    }
+/* HERO SECTION */
+.hero {
+  padding: 4rem 8%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
 
-    .nav-links a {
-      margin-left: 1.4rem;
-      color: #555555;
-      font-weight: 500;
-      font-size: 0.93rem;
-    }
+.hero-img {
+  width: 230px;
+  height: 230px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 4px solid #0F6E6E;
+  box-shadow: 0 8px 20px rgba(15,110,110,0.25);
+}
 
-    .nav-links a:hover {
-      color: #0059A8;
-    }
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #25282B;
+}
 
-    /* HERO */
-    .hero {
-      max-width: 1200px;
-      margin: 2.3rem auto;
-      padding: 2rem 1.5rem;
-      background: #FFFFFF;
-      border-radius: 16px;
-      border: 1px solid #E0E0E0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    }
+.hero p {
+  max-width: 520px;
+  margin-top: 1rem;
+  color: #3A3D40;
+  font-size: 1.05rem;
+}
 
-    .hero-text {
-      flex: 1 1 300px;
-    }
+/* SECTION WRAPPER */
+.section {
+  padding: 3rem 8%;
+  margin-top: 2rem;
+}
 
-    .hero-title {
-      font-size: 2.15rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      color: #1B1B1B;
-    }
+.section h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #0F6E6E;
+}
 
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: #444444;
-      margin-bottom: 0.9rem;
-    }
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
 
-    .hero-desc {
-      font-size: 0.96rem;
-      color: #555555;
-      max-width: 520px;
-      margin-bottom: 1.3rem;
-    }
+.project-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid #DADADA;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: 0.2s ease;
+}
 
-    .hero-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid #FFFFFF;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
 
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.project-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #EEEEEE;
+}
 
-    .btn-primary {
-      display: inline-block;
-      padding: 0.75rem 1.4rem;
-      background: #0059A8;
-      color: #FFFFFF;
-      border-radius: 8px;
-      font-weight: 500;
-      margin-right: 0.6rem;
-    }
+.project-card h3 {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
 
-    .btn-primary:hover { background: #004987; }
+.project-card p {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: #3A3D40;
+}
 
-    .btn-outline {
-      padding: 0.7rem 1.3rem;
-      border: 1px solid #CCCCCC;
-      border-radius: 8px;
-      color: #333;
-      font-weight: 500;
-      background: #FFFFFF;
-    }
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: #0F6E6E;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+}
 
-    .btn-outline:hover { border-color: #888; }
+/* EXPERIENCE + EDUCATION */
+.card {
+  background: #FFFFFF;
+  padding: 1.4rem;
+  border-radius: 14px;
+  border: 1px solid #DADADA;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
 
-    /* SECTION */
-    .section {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1.8rem 1.5rem;
-      background: #FFFFFF;
-      border-radius: 16px;
-      border: 1px solid #E0E0E0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-    }
+.card h3 {
+  color: #0F6E6E;
+  margin-bottom: 0.5rem;
+}
 
-    .section h2 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: #1B1B1B;
-      border-left: 4px solid #0059A8;
-      padding-left: 0.6rem;
-      margin-bottom: 1rem;
-    }
+.card span {
+  font-size: 0.85rem;
+  color: #666;
+}
 
-    /* PROJECT GRID */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-    }
+.card ul { margin-left: 1rem; margin-top: 0.5rem; }
+.card ul li { margin-bottom: 0.4rem; }
 
-    .project-card {
-      background: #FAFAFA;
-      border-radius: 14px;
-      border: 1px solid #E0E0E0;
-      overflow: hidden;
-      transition: all 0.25s ease;
-      color: inherit;
-    }
+/* FOOTER */
+footer {
+  background: #FFFFFF;
+  padding: 2rem 8%;
+  margin-top: 3rem;
+  border-top: 1px solid #DADADA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-      border-color: #CCCCCC;
-    }
+footer div { max-width: 33%; }
 
-    .project-image {
-      width: 100%;
-      height: 170px;
-      background: #EEE;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+footer h4 { color: #25282B; font-size: 1.1rem; margin-bottom: 0.5rem; }
 
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .project-content {
-      padding: 1rem;
-    }
-
-    .project-content h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #1B1B1B;
-    }
-
-    .project-content p {
-      font-size: 0.9rem;
-      color: #555555;
-      margin-bottom: 0.6rem;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 0.25rem 0.65rem;
-      background: #F0F0F0;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      margin-right: 0.3rem;
-      border: 1px solid #DDDDDD;
-      color: #444;
-    }
-
-    /* EXPERIENCE */
-    .exp-item {
-      margin-bottom: 1.2rem;
-    }
-
-    .exp-role {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      color: #1A1A1A;
-    }
-
-    .exp-meta {
-      font-size: 0.86rem;
-      color: #777;
-      margin-bottom: 0.5rem;
-    }
-
-    .exp-item ul {
-      padding-left: 1.1rem;
-      list-style: disc;
-    }
-
-    .exp-item li {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 0.25rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      font-size: 0.88rem;
-      color: #777;
-      border-top: 1px solid #DDDDDD;
-    }
-
-  </style>
+.footer-small {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<header>
-  <div class="nav-container">
-    <div class="brand">Praneeth Kumar Reddy Pappu</div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Praneeth Reddy</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#exp">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#edu">Education</a>
+    <a href="#contact">Contact</a>
   </div>
-</header>
+</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <h1 class="hero-title">Data Analyst</h1>
-    <div class="hero-subtitle">SQL · Excel · Power BI · Python</div>
-    <p class="hero-desc">
-      I analyze data, build dashboards, and create insights that help businesses make better decisions.
-      My work emphasizes clean data, clear KPIs, and dashboards stakeholders actually use.
-    </p>
-    <a href="#" class="btn-primary">Download Resume</a>
-    <a href="#projects" class="btn-outline">View Projects</a>
+  <img src="profile.jpg" class="hero-img" />
+  <div>
+    <h1>Data Analyst skilled in SQL, Power BI, Excel & Python</h1>
+    <p>I transform raw data into meaningful insights through dashboards, analytics, and automated reporting. I specialize in business intelligence, churn analytics, sales analytics, and data engineering fundamentals.</p>
   </div>
-
-  <div class="hero-photo">
-    <img src="profile.jpg" alt="Profile Photo">
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    I am a Data Analyst with hands-on experience in building dashboards, designing ETL workflows,
-    analyzing structured and unstructured datasets, and translating insights into business actions.
-  </p>
-  <p>
-    My domain work includes retail analytics, fintech remittance analysis, IPL analytics, pizza sales,
-    and telecom churn modeling using SQL, Excel, Python, and Power BI.
-  </p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="section">
   <h2>Skills</h2>
-  <p><strong>Tools:</strong> SQL, Excel, Power BI, Python, Pandas, Matplotlib</p>
-  <p><strong>Focus Areas:</strong> Data Cleaning, KPI Design, Dashboards, EDA</p>
+  <p><strong>Tools:</strong> SQL, Power BI, Excel, Python (Pandas), Google Sheets</p>
+  <p><strong>Specializations:</strong> Dashboards, ETL, Data Cleaning, KPI Design, Business Analytics</p>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <h2>Professional Experience</h2>
+<section id="exp" class="section">
+  <h2>Experience</h2>
 
-  <div class="exp-item">
-    <div class="exp-role">Data Analysis & Research Intern</div>
-    <div class="exp-meta">Ecological Servants Project · Jul 2025 – Present</div>
+  <div class="card">
+    <h3>Data Analysis & Research Intern — Ecological Servants Project</h3>
+    <span>Jul 2025 – Present | Remote</span>
     <ul>
-      <li>Analyzed 100+ monthly program entries to support reporting.</li>
-      <li>Built dashboards in Excel, Google Sheets, and Power BI.</li>
-      <li>Used SQL to uncover trends and provide insights.</li>
-      <li>Tracked website traffic (10,000+ monthly visitors).</li>
-      <li>Improved workflows and operational efficiency.</li>
+      <li>Analyze environmental program data (100+ entries/month) for reporting accuracy.</li>
+      <li>Build dashboards in Power BI, Excel & Sheets visualizing impact metrics.</li>
+      <li>Write SQL queries for trend analysis and operational insights.</li>
+      <li>Optimize website performance for 10,000+ monthly visitors.</li>
     </ul>
   </div>
 
-  <div class="exp-item">
-    <div class="exp-role">Data Analyst Intern</div>
-    <div class="exp-meta">ClobData · Jan 2022 – Jul 2023</div>
+  <div class="card">
+    <h3>Data Analyst Intern — ClobData</h3>
+    <span>Jan 2022 – Jul 2023 | Bangalore</span>
     <ul>
-      <li>Cleaned and validated datasets using SQL & Excel.</li>
-      <li>Built Power BI dashboards for sales and engagement KPIs.</li>
-      <li>Created SQL queries for data extraction and analysis.</li>
-      <li>Worked with business teams to translate requirements.</li>
+      <li>Cleaned & validated large datasets using SQL + Excel.</li>
+      <li>Built Power BI dashboards tracking sales and customer metrics.</li>
+      <li>Created SQL reports improving decision-making accuracy.</li>
     </ul>
   </div>
-
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects</h2>
 
-  <div class="projects-grid">
+  <div class="project-grid">
 
-    <!-- Retail -->
-    <a href="retail-sales-analysis.html" class="project-card">
-      <div class="project-image">
-        <img src="images/retail-dashboard.png.png" alt="">
-      </div>
-      <div class="project-content">
-        <h3>Retail Sales Dashboard (Excel)</h3>
-        <p>End-to-end retail reporting with KPIs and dashboard.</p>
-        <span class="tag">Excel</span>
-        <span class="tag">Dashboard</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <img src="retail-dashboard.png.png" />
+      <h3>Retail Sales Analysis (Excel)</h3>
+      <p>Complete retail performance dashboard: KPIs, trends, category insights.</p>
+      <span class="tag">Excel</span> <span class="tag">Dashboard</span>
+    </div>
 
-    <!-- SQL EDA -->
-    <a href="sql-cleaning-eda.html" class="project-card">
-      <div class="project-image" style="background:#F3F3F3; color:#888; display:flex; align-items:center; justify-content:center; font-size:0.9rem;">
-        No Image
-      </div>
-      <div class="project-content">
-        <h3>SQL Data Cleaning & EDA</h3>
-        <p>Layoffs dataset cleaned and analyzed using SQL.</p>
-        <span class="tag">SQL</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <img src="pizza-dashboard.png.png" />
+      <h3>Pizza Sales Analysis</h3>
+      <p>SQL + Tableau analysis of hourly, daily & seasonal ordering trends.</p>
+      <span class="tag">SQL</span> <span class="tag">Tableau</span>
+    </div>
 
-    <!-- Fintech -->
-    <a href="fintech-data-analysis.html" class="project-card">
-      <div class="project-image">
-        <img src="images/fintech-dashboard.png.png" alt="">
-      </div>
-      <div class="project-content">
-        <h3>Fintech Revenue Analytics</h3>
-        <p>Remittance data pipeline using SQL + Power BI.</p>
-        <span class="tag">Power BI</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <img src="fintech-dashboard.png.png" />
+      <h3>Fintech Revenue Analytics</h3>
+      <p>End-to-end sales, transactions, agent performance & revenue KPIs.</p>
+      <span class="tag">Power BI</span> <span class="tag">SQL</span>
+    </div>
 
-    <!-- IPL -->
-    <a href="ipl-analysis.html" class="project-card">
-      <div class="project-image">
-        <img src="images/ipl-dashboard.png.png" alt="">
-      </div>
-      <div class="project-content">
-        <h3>IPL Analytics Dashboard</h3>
-        <p>Insights into players, teams, and match performance.</p>
-        <span class="tag">Power BI</span>
-        <span class="tag">Sports</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <img src="ipl-dashboard.png.png" />
+      <h3>IPL Analytics Dashboard</h3>
+      <p>Interactive team, match & player performance insights (2008–2025).</p>
+      <span class="tag">Power BI</span>
+    </div>
 
-    <!-- Pizza -->
-    <a href="pizza-sales-analysis.html" class="project-card">
-      <div class="project-image">
-        <img src="images/pizza-dashboard.png.png" alt="">
-      </div>
-      <div class="project-content">
-        <h3>Pizza Sales Analysis</h3>
-        <p>SQL + Tableau analysis of pizza store sales.</p>
-        <span class="tag">SQL</span>
-        <span class="tag">Tableau</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <img src="churn-dashboard.png.png" />
+      <h3>Customer Churn Prediction</h3>
+      <p>Random Forest model + Power BI insights for churn factors.</p>
+      <span class="tag">Python</span> <span class="tag">Power BI</span>
+    </div>
 
-    <!-- Churn -->
-    <a href="customer-churn-analysis.html" class="project-card">
-      <div class="project-image">
-        <img src="images/churn-dashboard.png.png" alt="">
-      </div>
-      <div class="project-content">
-        <h3>Telecom Customer Churn</h3>
-        <p>Random Forest churn model + dashboards.</p>
-        <span class="tag">Python</span>
-        <span class="tag">Power BI</span>
-      </div>
-    </a>
+    <div class="project-card">
+      <h3>SQL Data Cleaning & EDA</h3>
+      <p>Layoffs dataset cleaned + explored using SQL.</p>
+      <span class="tag">SQL</span>
+    </div>
 
   </div>
-
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="section">
+<section id="edu" class="section">
   <h2>Education</h2>
 
-  <div class="exp-item">
-    <div class="exp-role">Master of Science — Data Science & Analytics</div>
-    <div class="exp-meta">Florida Atlantic University · Aug 2023 – May 2025</div>
-    <div class="exp-meta">GPA: 3.86</div>
+  <div class="card">
+    <h3>Master of Science — Data Science & Analytics</h3>
+    <span>Florida Atlantic University | 2023 – 2025 | GPA: 3.86</span>
   </div>
 
-  <div class="exp-item">
-    <div class="exp-role">Bachelor of Technology — CS & IT</div>
-    <div class="exp-meta">Siddhartha Institute of Engineering and Technology · 2019 – 2023</div>
-    <div class="exp-meta">GPA: 3.26</div>
+  <div class="card">
+    <h3>B.Tech — Computer Science & IT</h3>
+    <span>Siddhartha Institute of Engineering & Technology | 2019 – 2023</span>
   </div>
 
 </section>
@@ -451,18 +314,32 @@
 <!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:praneethkumarreddy952@gmail.com" style="color:#0059A8;">praneethkumarreddy952@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/praneethrdy" target="_blank" style="color:#0059A8;">linkedin.com/in/praneethrdy</a></p>
-  <p>GitHub: <a href="https://github.com/praneethkumarreddypappu" target="_blank" style="color:#0059A8;">github.com/praneethkumarreddypappu</a></p>
+  <p><strong>Email:</strong> praneethkumarreddy952@gmail.com</p>
+  <p><strong>LinkedIn:</strong> linkedin.com/in/praneethrdy</p>
+  <p><strong>GitHub:</strong> github.com/praneethkumarreddypappu</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © <span id="year"></span> Praneeth Kumar Reddy Pappu · Data Analyst
+  <div>
+    <h4>Praneeth Reddy</h4>
+    <p>Data Analyst specializing in dashboards, SQL, automation & insights.</p>
+  </div>
+
+  <div>
+    <h4>Connect</h4>
+    <p>LinkedIn • GitHub • Email</p>
+  </div>
+
+  <div>
+    <h4>Based In</h4>
+    <p>Miami, FL — Open to Remote / Hybrid / Relocation</p>
+  </div>
 </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<div class="footer-small">
+  © 2025 Praneeth Kumar Reddy Pappu. All rights reserved.
+</div>
 
 </body>
 </html>

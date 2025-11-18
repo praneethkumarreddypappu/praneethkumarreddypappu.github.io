@@ -5,46 +5,29 @@
   <title>Praneeth Kumar Reddy Pappu — Data Analyst Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: #F3F4F6; /* soft grey */
-      color: #111827;      /* charcoal */
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
+    body { font-family: "Inter", sans-serif; background: #F3F4F6; color: #111827; }
 
     /* NAVBAR */
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
       background: rgba(255,255,255,0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #E5E7EB;
     }
-
     .nav {
-      max-width: 1140px;
-      margin: 0 auto;
+      max-width: 1150px; margin: auto;
       padding: 0.9rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
     .nav-brand {
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: 0.03em;
-      color: #0F766E; /* teal accent */
+      font-weight: 600; font-size: 1.05rem; color: #0F766E;
     }
-
     .nav-links a {
       margin-left: 1.2rem;
       font-size: 0.92rem;
@@ -52,691 +35,416 @@
       color: #4B5563;
       position: relative;
       padding-bottom: 2px;
+      text-decoration: none;
     }
+    .nav-links a:hover { color: #0F766E; }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background: #0F766E;
-      border-radius: 999px;
-      transition: width 0.18s ease;
-    }
-
-    .nav-links a:hover {
-      color: #0F766E;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* HERO */
+    /* HERO SECTION (GRADIENT + ROUND PHOTO) */
     .hero {
-      max-width: 1140px;
-      margin: 1.8rem auto 0;
-      padding: 1.8rem 1.5rem 2.1rem;
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .hero-card {
-      flex: 1 1 320px;
-      background: #FFFFFF;
-      border-radius: 18px;
-      border: 1px solid #E5E7EB;
-      padding: 1.6rem 1.5rem;
-      box-shadow: 0 10px 25px rgba(15,23,42,0.06);
-    }
-
-    .hero-kicker {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #6B7280;
-      margin-bottom: 0.45rem;
-    }
-
-    .hero-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      font-weight: 500;
-      color: #374151;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-desc {
-      font-size: 0.93rem;
-      color: #4B5563;
-      max-width: 520px;
-    }
-
-    .hero-actions {
-      margin-top: 1.1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .btn-primary {
-      padding: 0.65rem 1.3rem;
-      border-radius: 999px;
-      background: #0F766E;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(135deg, #0EA5E9, #0D9488);
       color: #FFFFFF;
-      font-size: 0.88rem;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
     }
-
-    .btn-primary:hover {
-      background: #0D5F59;
+    .hero-inner {
+      max-width: 1150px; margin: auto;
+      display: flex; flex-wrap: wrap;
+      gap: 2rem; align-items: center; justify-content: space-between;
     }
-
-    .btn-ghost {
-      padding: 0.63rem 1.3rem;
-      border-radius: 999px;
-      background: #FFFFFF;
-      border: 1px solid #D1D5DB;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: #111827;
-      cursor: pointer;
+    .hero-content { flex: 1 1 480px; }
+    .hero-kicker {
+      font-size: 0.82rem; text-transform: uppercase;
+      letter-spacing: 0.18em; opacity: 0.9;
     }
-
-    .btn-ghost:hover {
-      border-color: #9CA3AF;
+    .hero-title { font-size: 2.2rem; font-weight: 700; margin: 0.4rem 0; }
+    .hero-subtitle { font-size: 1.05rem; opacity: 0.95; margin-bottom: 0.5rem; }
+    .hero-desc { font-size: 0.92rem; opacity: 0.9; margin-bottom: 1.2rem; max-width: 500px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .btn-primary {
+      padding: 0.7rem 1.4rem; border-radius: 999px;
+      background: #FFFFFF; color: #0D9488;
+      font-weight: 600; border: none;
     }
-
-    .hero-photo-wrapper {
-      flex: 0 0 240px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-photo {
-      width: 220px;
-      height: 220px;
-      border-radius: 18px; /* rounded rectangle */
-      overflow: hidden;
-      border: 3px solid #E5E7EB;
-      box-shadow: 0 10px 28px rgba(15,23,42,0.3);
-      background: #111827;
+    .btn-secondary {
+      padding: 0.7rem 1.4rem; border-radius: 999px;
+      border: 2px solid #FFFFFF; color: #FFFFFF;
+      font-weight: 600;
     }
 
     .hero-photo img {
-      width: 100%;
-      height: 100%;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       object-fit: cover;
     }
 
-    /* SECTIONS */
-    main {
-      max-width: 1140px;
-      margin: 0 auto 3rem;
-      padding: 0 1.5rem;
-    }
-
+    /* Sections */
+    main { max-width: 1150px; margin: auto; padding: 2rem 1.5rem; }
     .section {
       background: #FFFFFF;
       border-radius: 18px;
-      padding: 1.6rem 1.5rem 1.8rem;
+      padding: 1.6rem 1.5rem 1.9rem;
       margin-top: 1.6rem;
       border: 1px solid #E5E7EB;
-      box-shadow: 0 8px 22px rgba(15,23,42,0.04);
+      box-shadow: 0 8px 22px rgba(15,23,42,0.05);
     }
-
     .section h2 {
       font-size: 1.25rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
       color: #111827;
-      margin-bottom: 0.85rem;
       position: relative;
-      padding-bottom: 0.3rem;
     }
-
     .section h2::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 52px;
-      height: 2px;
-      border-radius: 999px;
-      background: #0F766E;
+      left: 0; bottom: -4px;
+      width: 46px; height: 2.7px;
+      background: #0F766E; border-radius: 8px;
     }
 
-    .section p {
-      font-size: 0.93rem;
-      color: #4B5563;
-      margin-bottom: 0.5rem;
-    }
-
-    /* PROJECTS GRID */
+    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.2rem;
-      margin-top: 0.9rem;
+      margin-top: 1rem;
     }
-
     .project-card {
-      background: #F9FAFB;
-      border-radius: 16px;
-      border: 1px solid #E5E7EB;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(15,23,42,0.04);
-      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      border-color: #CBD5E1;
-      box-shadow: 0 12px 28px rgba(15,23,42,0.08);
       background: #FFFFFF;
-    }
-
-    .project-image {
-      width: 100%;
-      height: 160px;
-      background: #E5E7EB;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .project-body {
-      padding: 0.9rem 0.9rem 1rem;
-      flex: 1;
-    }
-
-    .project-body h3 {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #111827;
-    }
-
-    .project-body p {
-      font-size: 0.88rem;
-      color: #4B5563;
-      margin-bottom: 0.55rem;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .tag {
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      background: #E0F2F1;
-      border: 1px solid #BAE6E4;
-      font-size: 0.72rem;
-      color: #0F766E;
-    }
-
-    /* SQL EDA "CODE" CARD */
-    .sql-code-box {
-      width: 100%;
-      height: 160px;
-      background: #111827;
-      color: #D1FAE5;
-      font-family: "Consolas", "SF Mono", monospace;
-      font-size: 0.78rem;
-      padding: 0.7rem 0.8rem;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
       overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+    }
+    .project-image { height: 160px; overflow: hidden; }
+    .project-image img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .project-body { padding: 1rem; }
+    .project-body h3 { margin-bottom: 0.3rem; font-size: 1rem; }
+    .project-body p { font-size: 0.88rem; margin-bottom: 0.6rem; color: #4B5563; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: #D1FAE5;
+      border: 1px solid #A7F3D0;
+      font-size: 0.72rem;
+      color: #047857;
     }
 
-    .sql-code-box pre {
+    /* SQL CODE BOX */
+    .sql-code-box {
+      background: #0D1117;
+      color: #A3F7BF;
+      font-family: Consolas, monospace;
+      padding: 1rem;
+      height: 160px;
+      font-size: 0.79rem;
+      overflow: hidden;
       white-space: pre;
     }
 
     /* EXPERIENCE & EDUCATION */
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.7rem;
-    }
-
-    .timeline-card {
-      background: #F9FAFB;
-      border-radius: 16px;
-      border: 1px solid #E5E7EB;
-      padding: 1rem 1rem 1.1rem;
-    }
-
-    .timeline-role {
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: #111827;
-      margin-bottom: 0.15rem;
-    }
-
-    .timeline-meta {
-      font-size: 0.82rem;
-      color: #6B7280;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-card ul {
-      padding-left: 1.1rem;
-      list-style: disc;
-      margin: 0;
-    }
-
-    .timeline-card li {
-      font-size: 0.86rem;
-      color: #4B5563;
-      margin-bottom: 0.25rem;
-    }
-
-    .edu-list {
+    .timeline, .edu-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.1rem;
-      margin-top: 0.7rem;
+      gap: 1.2rem; margin-top: 1rem;
     }
-
-    .edu-card {
+    .timeline-card, .edu-card {
       background: #F9FAFB;
+      padding: 1rem;
       border-radius: 16px;
       border: 1px solid #E5E7EB;
-      padding: 1rem 1rem 1.1rem;
     }
-
-    .edu-degree {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      color: #111827;
-    }
-
-    .edu-school {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #0F766E;
-      margin-bottom: 0.1rem;
-    }
-
-    .edu-meta {
-      font-size: 0.82rem;
-      color: #6B7280;
+    .timeline-role, .edu-degree {
+      font-size: 1rem; font-weight: 600;
       margin-bottom: 0.2rem;
     }
-
-    .edu-gpa {
-      font-size: 0.82rem;
-      color: #4B5563;
+    .timeline-meta, .edu-meta {
+      font-size: 0.82rem; color: #6B7280; margin-bottom: 0.4rem;
     }
-
-    /* CONTACT */
-    #contact a {
-      color: #0F766E;
+    .timeline-card ul {
+      padding-left: 1.2rem;
+    }
+    .timeline-card li {
+      font-size: 0.88rem; color: #4B5563; margin-bottom: 0.3rem;
     }
 
     /* FOOTER */
     footer {
-      margin-top: 2.4rem;
       background: #020617;
-      color: #E5E7EB;
-      padding: 2.1rem 1.5rem 1.6rem;
+      color: #CBD5E1;
+      padding: 2rem 1.5rem;
+      margin-top: 2.4rem;
     }
-
     .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      align-items: flex-start;
+      max-width: 1150px; margin: auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.4rem;
     }
-
     .footer-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #F9FAFB;
+      font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;
+      color: #F1F5F9;
     }
-
-    .footer-inner p {
-      font-size: 0.86rem;
-      color: #9CA3AF;
-      margin-bottom: 0.25rem;
-    }
-
-    .footer-links a {
-      display: inline-block;
-      margin-right: 0.7rem;
-      font-size: 0.86rem;
-      color: #E5E7EB;
-    }
-
-    .footer-links a:hover {
-      color: #5EEAD4;
-    }
-
     .footer-bottom {
-      max-width: 1140px;
-      margin: 1.2rem auto 0;
-      border-top: 1px solid #111827;
+      margin-top: 1rem; text-align: center;
+      font-size: 0.8rem; color: #64748B;
+      border-top: 1px solid #1E293B;
       padding-top: 0.7rem;
-      font-size: 0.78rem;
-      color: #6B7280;
-      text-align: center;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        flex-direction: column-reverse;
-      }
-      .hero-card { width: 100%; }
-      .hero-photo-wrapper {
-        justify-content: flex-start;
-      }
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
-      .nav-links a {
-        margin-left: 0.9rem;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <div class="nav">
-      <div class="nav-brand">Praneeth Kumar Reddy Pappu</div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<!-- NAVBAR -->
+<header>
+  <div class="nav">
+    <div class="nav-brand">Praneeth Kumar Reddy Pappu</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-card">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+
       <div class="hero-kicker">DATA ANALYST</div>
-      <h1 class="hero-title">SQL · Excel · Power BI · Python</h1>
-      <div class="hero-subtitle">I build dashboards and turn data into simple, useful insights.</div>
+
+      <h1 class="hero-title">SQL • Power BI • Excel • Python</h1>
+
+      <p class="hero-subtitle">
+        I build dashboards, automate reports, and turn complex datasets into simple, useful insights.
+      </p>
+
       <p class="hero-desc">
-        I work across SQL, Excel, Power BI, and Python to clean data, design KPIs, and build reports. 
-        My focus is on clear visuals, honest numbers, and explanations that help teams make better decisions.
+        With real experience in analytics, ETL, Excel modeling, SQL querying, Power BI, and Python, 
+        I focus on clarity, accuracy, and business-friendly storytelling.
       </p>
+
       <div class="hero-actions">
-        <button class="btn-primary">Download Resume</button>
-        <button class="btn-ghost" onclick="location.href='#projects'">View Projects</button>
+        <a href="#" class="btn-primary">Download Resume</a>
+        <a href="#projects" class="btn-secondary">View Projects</a>
       </div>
+
     </div>
 
-    <div class="hero-photo-wrapper">
-      <div class="hero-photo">
-        <img src="profile.jpg" alt="Praneeth Kumar Reddy Pappu">
-      </div>
+    <div class="hero-photo">
+      <img src="profile.jpg" alt="Praneeth Photo">
     </div>
-  </section>
+  </div>
+</section>
 
-  <main>
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>
-        I'm a Data Analyst with a background in Computer Science and a Master’s in Data Science & Analytics.
-        I enjoy taking messy, real-world data and turning it into structured tables, clear KPIs, and dashboards
-        that non-technical stakeholders can actually use.
-      </p>
-      <p>
-        My work and projects cover retail sales, layoffs analytics, fintech transactions, IPL cricket data,
-        pizza sales, and telecom churn. I like working end-to-end: from loading and cleaning data with SQL 
-        and Excel, to building dashboards in Power BI, to presenting insights in a way that supports real decisions.
-      </p>
-    </section>
+<main>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <h2>Skills & Tools</h2>
-      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, DAX basics, interactive reporting</p>
-      <p><strong>Databases & SQL:</strong> SQL Server, MySQL, joins, CTEs, window functions, data cleaning</p>
-      <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn (for ML basics)</p>
-      <p><strong>Analytics Domains:</strong> Retail, layoffs, fintech, sports analytics, pizza sales, telecom churn</p>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    I am a Data Analyst specializing in SQL, Power BI, Excel, and Python to help organizations make data-driven decisions.
+  </p>
+  <p>
+    My work includes building dashboards, transforming raw data, cleaning and modeling datasets, and delivering insights 
+    across retail, fintech, layoffs, sports analytics, pizza sales, and telecom churn domains.
+  </p>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <h2>Professional Experience</h2>
-      <div class="timeline">
-        <div class="timeline-card">
-          <div class="timeline-role">Data Analysis & Research Intern</div>
-          <div class="timeline-meta">Ecological Servants Project · Remote · Jul 2025 – Present</div>
-          <ul>
-            <li>Manage and analyze environmental program data (100+ entries monthly) to support reporting and strategy.</li>
-            <li>Design interactive dashboards in Excel, Google Sheets, and Power BI to visualize reach, engagement, and impact.</li>
-            <li>Write SQL queries to explore datasets, uncover trends, and provide actionable recommendations.</li>
-            <li>Track website and blog performance (10,000+ monthly visitors) to understand top content and drop-off points.</li>
-            <li>Support social engagement and grant research by compiling audience behavior trends and funder alignment.</li>
-            <li>Collaborate with staff to streamline workflows and improve operational efficiency and returning visitors.</li>
-          </ul>
-        </div>
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>Skills & Tools</h2>
+  <p><strong>Business Intelligence:</strong> Power BI, Excel Dashboards, DAX</p>
+  <p><strong>Databases & SQL:</strong> SQL Server, MySQL, Window Functions, CTEs</p>
+  <p><strong>Python:</strong> Pandas, NumPy, Scikit-learn, Matplotlib</p>
+  <p><strong>Analytics:</strong> Retail, Fintech, IPL, Pizza Sales, Telecom Churn</p>
+</section>
 
-        <div class="timeline-card">
-          <div class="timeline-role">Data Analyst Intern</div>
-          <div class="timeline-meta">ClobData · Bangalore, India · Jan 2022 – Jul 2023</div>
-          <ul>
-            <li>Cleaned, validated, and standardized large datasets with Excel and SQL to improve data quality.</li>
-            <li>Built and maintained Power BI dashboards tracking sales, customer engagement, and operations.</li>
-            <li>Wrote SQL queries for data extraction and analysis to support weekly and monthly business reporting.</li>
-            <li>Worked with senior analysts and business stakeholders to translate requirements into data insights.</li>
-            <li>Documented reporting processes and standards to support team efficiency and knowledge sharing.</li>
-          </ul>
-        </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <h2>Experience</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-card">
+      <div class="timeline-role">Data Analysis & Research Intern</div>
+      <div class="timeline-meta">Ecological Servants Project · Jul 2025 – Present</div>
+      <ul>
+        <li>Analyze environmental program data and build dashboards in Excel, Power BI, and Sheets.</li>
+        <li>Write SQL queries for insights and reporting.</li>
+        <li>Track website analytics for 10,000+ visitors monthly.</li>
+        <li>Support grant research and outreach insights.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-card">
+      <div class="timeline-role">Data Analyst Intern</div>
+      <div class="timeline-meta">ClobData · Jan 2022 – Jul 2023</div>
+      <ul>
+        <li>Cleaned datasets using SQL & Excel.</li>
+        <li>Created Power BI dashboards for KPIs.</li>
+        <li>Developed SQL queries for reporting.</li>
+        <li>Collaborated with analysts and business teams.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- Retail -->
+    <a class="project-card" href="retail-sales-analysis.html">
+      <div class="project-image"><img src="images/retail-dashboard.png.png"></div>
+      <div class="project-body">
+        <h3>Retail Sales Dashboard (Excel)</h3>
+        <p>KPIs, trends, pivot analysis, and interactive Excel dashboard.</p>
+        <div class="tag-list"><span class="tag">Excel</span><span class="tag">Dashboard</span></div>
       </div>
-    </section>
+    </a>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="projects-grid">
+    <!-- Pizza -->
+    <a class="project-card" href="pizza-sales-analysis.html">
+      <div class="project-image"><img src="images/pizza-dashboard.png.png"></div>
+      <div class="project-body">
+        <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
+        <p>Revenue trends, AOV, time-based sales visualized in Tableau.</p>
+        <div class="tag-list"><span class="tag">SQL</span><span class="tag">Tableau</span></div>
+      </div>
+    </a>
 
-        <!-- Retail -->
-        <a href="retail-sales-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/retail-dashboard.png.png" alt="Retail Sales Dashboard">
-          </div>
-          <div class="project-body">
-            <h3>Retail Sales Dashboard (Excel)</h3>
-            <p>End-to-end retail analysis with calculated KPIs and an interactive Excel dashboard for regions, products, and reps.</p>
-            <div class="tag-list">
-              <span class="tag">Excel</span>
-              <span class="tag">Dashboard</span>
-            </div>
-          </div>
-        </a>
+    <!-- Fintech -->
+    <a class="project-card" href="fintech-data-analysis.html">
+      <div class="project-image"><img src="images/fintech-dashboard.png.png"></div>
+      <div class="project-body">
+        <h3>Fintech Revenue Analytics</h3>
+        <p>ETL → SQL → KPIs → Power BI dashboard for revenue tracking.</p>
+        <div class="tag-list"><span class="tag">Power BI</span><span class="tag">SQL</span></div>
+      </div>
+    </a>
 
-        <!-- Pizza -->
-        <a href="pizza-sales-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/pizza-dashboard.png.png" alt="Pizza Sales Dashboard">
-          </div>
-          <div class="project-body">
-            <h3>Pizza Sales Analysis</h3>
-            <p>SQL + Tableau analysis of pizza orders with KPIs like revenue, AOV, and time-based demand trends.</p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">Tableau</span>
-            </div>
-          </div>
-        </a>
+    <!-- IPL -->
+    <a class="project-card" href="ipl-analysis.html">
+      <div class="project-image"><img src="images/ipl-dashboard.png.png"></div>
+      <div class="project-body">
+        <h3>IPL Analytics Dashboard</h3>
+        <p>Team performance, player stats, and season trends in Power BI.</p>
+        <div class="tag-list"><span class="tag">Sports Analytics</span></div>
+      </div>
+    </a>
 
-        <!-- Fintech -->
-        <a href="fintech-data-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/fintech-dashboard.png.png" alt="Fintech Revenue Dashboard">
-          </div>
-          <div class="project-body">
-            <h3>Fintech Revenue Analytics</h3>
-            <p>ETL + SQL + Power BI pipeline for fee revenue, agent performance, customer trends, and payment method analysis.</p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">Power BI</span>
-            </div>
-          </div>
-        </a>
+    <!-- Churn -->
+    <a class="project-card" href="customer-churn-analysis.html">
+      <div class="project-image"><img src="images/churn-dashboard.png.png"></div>
+      <div class="project-body">
+        <h3>Telecom Churn Analysis</h3>
+        <p>SQL ETL → ML (Random Forest) → Power BI dashboards.</p>
+        <div class="tag-list"><span class="tag">Python</span><span class="tag">ML</span></div>
+      </div>
+    </a>
 
-        <!-- IPL -->
-        <a href="ipl-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/ipl-dashboard.png.png" alt="IPL Analytics Dashboard">
-          </div>
-          <div class="project-body">
-            <h3>IPL Analytics Dashboard</h3>
-            <p>Power BI dashboard exploring team performance, player stats, and season trends across IPL seasons.</p>
-            <div class="tag-list">
-              <span class="tag">Power BI</span>
-              <span class="tag">Sports Analytics</span>
-            </div>
-          </div>
-        </a>
+    <!-- SQL EDA (no image) -->
+    <a class="project-card" href="sql-cleaning-eda.html">
+      <div class="sql-code-box">
+┌───────────────────────────┬────────────────┐
+│ industry                  │ total_layoffs  │
+├───────────────────────────┼────────────────┤
+│ Technology                │ 152,300        │
+│ Retail                    │ 89,200         │
+│ Finance                   │ 56,900         │
+└───────────────────────────┴────────────────┘
 
-        <!-- Churn -->
-        <a href="customer-churn-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/churn-dashboard.png.png" alt="Telecom Churn Dashboard">
-          </div>
-          <div class="project-body">
-            <h3>Telecom Customer Churn</h3>
-            <p>Combined SQL ETL, Power BI dashboards, and a Random Forest model in Python to understand and predict churn.</p>
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">ML</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- SQL EDA (NO IMAGE, CODE STYLE) -->
-        <a href="sql-cleaning-eda.html" class="project-card">
-          <div class="sql-code-box">
-<pre>
-+----------------------+--------------+
-| industry             | total_layoffs|
-+----------------------+--------------+
-| Technology           | 152300       |
-| Retail               |  89200       |
-| Finance              |  56900       |
-+----------------------+--------------+
-
-SELECT industry, SUM(total_laid_off) AS total_layoffs
+SELECT industry,
+       SUM(total_laid_off) AS total_layoffs
 FROM layoffs_cleaned
 GROUP BY industry
 ORDER BY total_layoffs DESC;
-</pre>
-          </div>
-          <div class="project-body">
-            <h3>SQL Data Cleaning & EDA — Layoffs</h3>
-            <p>Cleaned and transformed a layoffs dataset using SQL, removed duplicates and nulls, and analyzed trends by industry and time.</p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">EDA</span>
-            </div>
-          </div>
-        </a>
-
       </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-      <h2>Education</h2>
-      <div class="edu-list">
-        <div class="edu-card">
-          <div class="edu-degree">Master of Science — Data Science & Analytics</div>
-          <div class="edu-school">Florida Atlantic University</div>
-          <div class="edu-meta">Boca Raton, FL · Aug 2023 – May 2025</div>
-          <div class="edu-gpa">GPA: 3.86 / 4.0</div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-degree">Bachelor of Technology — Computer Science & IT</div>
-          <div class="edu-school">Siddhartha Institute of Engineering & Technology</div>
-          <div class="edu-meta">Puttur, India · 2019 – 2023</div>
-          <div class="edu-gpa">GPA: 3.26 / 4.0</div>
-        </div>
+      <div class="project-body">
+        <h3>SQL Data Cleaning & EDA</h3>
+        <p>SQL cleaning, transformation, industry-level insights.</p>
+        <div class="tag-list"><span class="tag">SQL</span><span class="tag">EDA</span></div>
       </div>
-    </section>
+    </a>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>If you'd like to discuss opportunities or projects, feel free to reach out.</p>
-      <p><strong>Email:</strong> <a href="mailto:praneethkumarreddy952@gmail.com">praneethkumarreddy952@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a></p>
-    </section>
+  </div>
+</section>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-title">Praneeth Kumar Reddy Pappu</div>
-        <p>Data Analyst focused on dashboards, SQL, and practical business insights.</p>
-      </div>
-      <div>
-        <div class="footer-title">Connect</div>
-        <div class="footer-links">
-          <a href="https://github.com/praneethkumarreddypappu" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">LinkedIn</a>
-          <a href="mailto:praneethkumarreddy952@gmail.com">Email</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Based In</div>
-        <p>Miami / Boca Raton, FL</p>
-        <p>Open to Remote & Hybrid Roles</p>
-      </div>
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <h2>Education</h2>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div class="edu-degree">Master of Science — Data Science & Analytics</div>
+      <div class="edu-meta">Florida Atlantic University · 2023–2025</div>
+      <div class="edu-gpa">GPA: 3.86 / 4.0</div>
     </div>
-
-    <div class="footer-bottom">
-      © <span id="year"></span> Praneeth Kumar Reddy Pappu · All rights reserved.
+    <div class="edu-card">
+      <div class="edu-degree">Bachelor of Technology — CS & IT</div>
+      <div class="edu-meta">Siddhartha Institute · 2019–2023</div>
+      <div class="edu-gpa">GPA: 3.26 / 4.0</div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:praneethkumarreddy952@gmail.com">praneethkumarreddy952@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/praneethrdy">linkedin.com/in/praneethrdy</a></p>
+  <p>GitHub: <a href="https://github.com/praneethkumarreddypappu">github.com/praneethkumarreddypappu</a></p>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">Praneeth Kumar Reddy Pappu</div>
+      <p>Data Analyst · SQL · Excel · Power BI · Python</p>
+    </div>
+    <div>
+      <div class="footer-title">Connect</div>
+      <p><a href="https://github.com/praneethkumarreddypappu">GitHub</a></p>
+      <p><a href="https://www.linkedin.com/in/praneethrdy">LinkedIn</a></p>
+      <p><a href="mailto:praneethkumarreddy952@gmail.com">Email</a></p>
+    </div>
+    <div>
+      <div class="footer-title">Location</div>
+      <p>Miami • Boca Raton, FL</p>
+      <p>Open to Remote & Hybrid Roles</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Praneeth Kumar Reddy Pappu · All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

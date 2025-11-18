@@ -11,304 +11,229 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
-      background: #F7F5F2; /* Soft Sand Background */
-      color: #1A1A1A;
+      background: #F5F6F7;
+      color: #1A1A1D;
       line-height: 1.6;
     }
     a { text-decoration: none; color: inherit; }
 
-    /* COLORS */
-    :root {
-      --charcoal: #1A1A1A;
-      --gold: #C6A667;
-      --gold-dark: #A88948;
-      --sand: #F7F5F2;
-      --card-border: #D8D2C4;
-      --text-dark: #1A1A1A;
-      --text-muted: #4B4B4D;
-    }
-
-    /* NAVBAR */
+    /* NAV */
     header {
       position: sticky;
       top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #E5E7EB;
       z-index: 100;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--card-border);
     }
     .nav {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 1rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
     .nav-brand {
       font-weight: 700;
       font-size: 1.1rem;
-      color: var(--charcoal);
+      color: #0B626A;
     }
     .nav-links a {
-      margin-left: 1.2rem;
-      font-size: 0.92rem;
+      margin-left: 1.4rem;
+      font-size: 0.94rem;
       font-weight: 500;
-      color: var(--text-muted);
+      color: #3A3F44;
       position: relative;
-      padding-bottom: 2px;
     }
     .nav-links a:hover {
-      color: var(--gold);
+      color: #0B626A;
     }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--gold);
-      transition: width 0.18s ease;
-    }
-    .nav-links a:hover::after {
+
+    /* HERO FULL WIDTH */
+    .hero-wrapper {
       width: 100%;
+      background: linear-gradient(135deg, #0F766E, #0D9488, #0F766E);
+      padding: 3.5rem 1.5rem 4.5rem;
     }
-
-    main {
-      max-width: 1150px;
-      margin: 0 auto 3rem;
-      padding: 0 1.5rem;
-    }
-
-    /* HERO */
     .hero {
-      margin-top: 2rem;
-      padding: 2rem;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #1A1A1A 0%, #C6A667 120%);
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       gap: 2rem;
-      color: white;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #ffffff;
     }
-    .hero-text { flex: 1 1 330px; }
-    
-    .hero-kicker {
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
-      color: #E2D7C3;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
+    .hero-text {
+      flex: 1 1 450px;
     }
-    .hero-title-line1 {
-      font-size: 2.2rem;
+    .hero-title {
+      font-size: 2.4rem;
       font-weight: 700;
       margin-bottom: 0.2rem;
     }
-    .hero-title-line2 {
-      font-size: 1.3rem;
+    .hero-sub {
+      font-size: 1.15rem;
       font-weight: 500;
-      margin-bottom: 0.8rem;
-    }
-    .hero-tagline {
-      font-size: 1rem;
-      color: #F0EDE7;
       margin-bottom: 0.6rem;
+      color: #DFFCF8;
     }
     .hero-desc {
-      font-size: 0.95rem;
-      color: #E7E3DB;
+      font-size: 1rem;
       max-width: 520px;
       margin-bottom: 1.3rem;
+      color: #EAFEF9;
     }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    .hero-actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
     .btn-primary {
+      background: white;
+      color: #0B626A;
       padding: 0.75rem 1.5rem;
       border-radius: 999px;
-      background: var(--gold);
-      color: var(--charcoal);
       font-weight: 600;
       font-size: 0.92rem;
     }
-    .btn-primary:hover {
-      background: var(--gold-dark);
-    }
     .btn-outline {
-      padding: 0.72rem 1.5rem;
-      border-radius: 999px;
       background: transparent;
-      border: 1px solid #E8D9B7;
+      border: 2px solid #D1FAF0;
       color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
       font-size: 0.92rem;
-      font-weight: 500;
-    }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
     }
 
+    .hero-photo {
+      flex: 0 0 260px;
+      display: flex;
+      justify-content: center;
+    }
     .hero-photo img {
-      width: 200px;
-      height: 200px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #FFFFFF;
-      box-shadow: 0px 8px 22px rgba(0,0,0,0.35);
+      border: 5px solid #EFFFFA;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    /* MAIN PAGE */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 3rem;
     }
 
     /* SECTIONS */
     .section {
-      background: #FFFFFF;
-      border-radius: 18px;
-      border: 1px solid var(--card-border);
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+      background: white;
+      padding: 1.8rem 1.8rem 2rem;
+      border-radius: 16px;
+      border: 1px solid #E5E7EB;
+      margin-top: 1.7rem;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.04);
     }
     .section h2 {
       font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--charcoal);
       margin-bottom: 0.8rem;
-      position: relative;
+      color: #0B626A;
     }
-    .section h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 50px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--gold);
-    }
-    .section p {
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
+    .section p { color: #444; font-size: 0.96rem; }
 
-    /* CARDS & GRIDS */
-    .grid-two {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.4rem;
-      margin-top: 1rem;
-    }
-    .card {
-      background: #FFFFFF;
-      border-radius: 16px;
-      border: 1px solid var(--card-border);
-      padding: 1.2rem;
-    }
-    .card-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--charcoal);
-    }
-    .card-meta {
-      font-size: 0.85rem;
-      color: #706A60;
-      margin-bottom: 0.5rem;
-    }
-    .card li {
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-    }
-
-    /* PROJECT CARDS */
+    /* PROJECT GRID */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.3rem;
-      margin-top: 1.2rem;
+      margin-top: 1.3rem;
     }
     .project-card {
-      background: #FFFFFF;
+      background: white;
+      border: 1px solid #E5E7EB;
       border-radius: 16px;
-      border: 1px solid var(--card-border);
       overflow: hidden;
-      transition: 0.2s ease;
+      transition: 0.2s;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     .project-card:hover {
       transform: translateY(-4px);
-      border-color: var(--gold);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      border-color: #A7F3D0;
     }
     .project-image img {
       width: 100%;
-      height: 170px;
+      height: 160px;
       object-fit: cover;
     }
+    .project-body {
+      padding: 1rem;
+    }
+    .project-body h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #0B626A;
+      font-weight: 600;
+    }
     .tag {
-      background: #F0E7D0;
-      padding: 0.25rem 0.55rem;
-      font-size: 0.72rem;
+      background: #D1FAF0;
+      color: #0F766E;
+      padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      color: #5A4D2C;
-      border: 1px solid #D6C5A3;
+      font-size: 0.75rem;
+      margin-right: 0.3rem;
     }
 
-    /* SQL BOX */
-    .sql-code-box {
-      background: #111;
-      color: #D7DADC;
-      font-family: Consolas, monospace;
-      padding: 0.7rem;
-      height: 155px;
+    /* SQL BLOCK */
+    .sql-block {
+      background: #0F172A;
+      color: #E2E8F0;
+      padding: 1rem;
+      height: 150px;
       white-space: pre;
-      overflow: hidden;
-      font-size: 0.78rem;
+      font-family: "Consolas", monospace;
+      font-size: 0.8rem;
     }
 
     /* FOOTER */
     footer {
-      background: #1A1A1A;
-      color: #EDEDED;
-      padding: 2rem 1.5rem;
-      margin-top: 2.5rem;
+      background: #0B1B1D;
+      color: #cbd5e1;
+      padding: 2.5rem 1.5rem 2rem;
+      margin-top: 3rem;
     }
     .footer-inner {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 1.4rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
     .footer-title {
-      font-size: 1rem;
+      color: white;
       font-weight: 600;
-      color: #FFFFFF;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .footer-links a {
-      margin-right: 0.8rem;
-      color: var(--gold);
+      color: #A7F3D0;
+      margin-right: 1rem;
       font-size: 0.9rem;
     }
-
     .footer-bottom {
+      margin-top: 1.2rem;
       text-align: center;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #444;
       font-size: 0.85rem;
-      color: #B0B0B0;
+      color: #94A3B8;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <header>
     <div class="nav">
       <div class="nav-brand">Praneeth Kumar Reddy Pappu</div>
@@ -323,84 +248,81 @@
     </div>
   </header>
 
-  <main>
-
-    <!-- HERO -->
+  <!-- HERO -->
+  <div class="hero-wrapper">
     <section class="hero">
+
       <div class="hero-text">
-        <div class="hero-kicker">DATA ANALYST</div>
-
-        <h1 class="hero-title-line1">Hello, I'm Praneeth</h1>
-        <div class="hero-title-line2">A Data Analyst</div>
-
-        <p class="hero-tagline">I turn complex data into clear, actionable insights.</p>
+        <h1 class="hero-title">Hello, I'm Praneeth</h1>
+        <div class="hero-sub">A Data Analyst — SQL | Power BI | Excel | Python</div>
 
         <p class="hero-desc">
-          I work across SQL, Power BI, Excel, and Python to clean data, design KPIs, automate reporting,  
-          and build dashboards that support business decisions.
+          I turn complex data into clear insights that drive smarter decisions.
+          I focus on SQL, Power BI, Excel and Python to build dashboards, KPIs and
+          analytical stories that teams use every day.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-buttons">
           <a class="btn-primary" href="Praneeth_Analyst_Resume.pdf" target="_blank">Download Resume</a>
           <a class="btn-outline" href="#projects">View Projects</a>
         </div>
       </div>
 
       <div class="hero-photo">
-        <img src="profile.jpg" alt="Profile photo of Praneeth">
+        <img src="profile.jpg" alt="Profile Photo">
       </div>
+
     </section>
+  </div>
+
+  <main>
 
     <!-- ABOUT -->
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm a Data Analyst with a background in Computer Science and a Master's in Data Science & Analytics.
-        I enjoy transforming raw datasets into structured tables, KPIs, and dashboards that drive real business value.
-      </p>
-      <p>
-        My experience spans retail, fintech, IPL sports analytics, layoffs analysis, pizza sales, and telecom churn modeling.
+        I'm a Data Analyst with hands-on experience turning raw datasets into dashboards,
+        KPIs and insights that help businesses make confident decisions.
       </p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
       <h2>Skills & Tools</h2>
-      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, KPI design</p>
+      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, KPI design, DAX</p>
       <p><strong>Databases & SQL:</strong> SQL Server, MySQL, joins, CTEs, window functions</p>
       <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn</p>
-      <p><strong>Domains:</strong> Retail, fintech, layoffs, sports analytics, pizza sales, churn modeling</p>
+      <p><strong>Domains:</strong> Retail, Fintech, Telecom, IPL, Pizza Sales, Churn</p>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <h2>Experience</h2>
-      <div class="grid-two">
 
-        <div class="card">
-          <div class="card-title">Data Analysis & Research Intern</div>
-          <div class="card-meta">Ecological Servants Project · Remote · Jul 2025 – Present</div>
+      <div class="projects-grid">
+
+        <div class="project-card" style="padding:1rem;">
+          <h3>Data Analysis & Research Intern — Ecological Servants Project</h3>
+          <p>Jul 2025 – Present · Remote</p>
           <ul>
-            <li>Analyzed 100+ monthly program entries to support environmental reporting.</li>
-            <li>Created dashboards in Excel, Sheets, and Power BI.</li>
-            <li>Wrote SQL queries for exploration and insights.</li>
-            <li>Monitored website analytics (10,000+ visitors/month).</li>
-            <li>Assisted with social engagement & grant research.</li>
+            <li>Analyzed program data (100+ entries/month) for strategic reporting</li>
+            <li>Built dashboards in Excel, Sheets and Power BI</li>
+            <li>SQL data exploration and trends analysis</li>
           </ul>
         </div>
 
-        <div class="card">
-          <div class="card-title">Data Analyst Intern</div>
-          <div class="card-meta">ClobData · Bangalore · Jan 2022 – Jul 2023</div>
+        <div class="project-card" style="padding:1rem;">
+          <h3>Data Analyst Intern — ClobData</h3>
+          <p>Jan 2022 – Jul 2023 · Bangalore</p>
           <ul>
-            <li>Cleaned and validated datasets using Excel and SQL.</li>
-            <li>Designed Power BI dashboards for sales, operations, and engagement KPIs.</li>
-            <li>Executed SQL queries for reporting and data extraction.</li>
-            <li>Worked with business teams for requirements & insights.</li>
+            <li>Cleaned and validated large datasets using Excel and SQL</li>
+            <li>Created Power BI dashboards for KPIs</li>
+            <li>Wrote SQL queries for reports and trends</li>
           </ul>
         </div>
 
       </div>
+
     </section>
 
     <!-- PROJECTS -->
@@ -409,86 +331,73 @@
 
       <div class="projects-grid">
 
+        <!-- Retail -->
         <a href="retail-sales-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/retail-dashboard.png.png" />
-          </div>
+          <div class="project-image"><img src="images/retail-dashboard.png.png"></div>
           <div class="project-body">
-            <h3>Retail Sales Analysis & Dashboard</h3>
-            <p>Excel dashboard with KPIs, reps, trends, and insights.</p>
+            <h3>Retail Sales Analysis (Excel)</h3>
             <span class="tag">Excel</span>
             <span class="tag">Dashboard</span>
           </div>
         </a>
 
+        <!-- Pizza -->
         <a href="pizza-sales-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/pizza-dashboard.png.png" />
-          </div>
+          <div class="project-image"><img src="images/pizza-dashboard.png.png"></div>
           <div class="project-body">
-            <h3>Pizza Sales Analysis</h3>
-            <p>SQL + Tableau analytics for orders, revenue, and seasonality.</p>
+            <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
             <span class="tag">SQL</span>
             <span class="tag">Tableau</span>
           </div>
         </a>
 
+        <!-- Fintech -->
         <a href="fintech-data-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/fintech-dashboard.png.png" />
-          </div>
+          <div class="project-image"><img src="images/fintech-dashboard.png.png"></div>
           <div class="project-body">
             <h3>Fintech Revenue Analytics</h3>
-            <p>ETL, SQL, and BI dashboard for fee revenue & agents.</p>
-            <span class="tag">SQL</span>
             <span class="tag">Power BI</span>
+            <span class="tag">SQL</span>
           </div>
         </a>
 
+        <!-- IPL -->
         <a href="ipl-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/ipl-dashboard.png.png" />
-          </div>
+          <div class="project-image"><img src="images/ipl-dashboard.png.png"></div>
           <div class="project-body">
             <h3>IPL Analytics Dashboard</h3>
-            <p>Power BI analysis of IPL teams, players & seasons.</p>
             <span class="tag">Power BI</span>
-            <span class="tag">Sports</span>
           </div>
         </a>
 
+        <!-- Churn -->
         <a href="customer-churn-analysis.html" class="project-card">
-          <div class="project-image">
-            <img src="images/churn-dashboard.png.png" />
-          </div>
+          <div class="project-image"><img src="images/churn-dashboard.png.png"></div>
           <div class="project-body">
-            <h3>Customer Churn Analysis</h3>
-            <p>SQL ETL, Power BI dashboards & Python model.</p>
+            <h3>Telecom Churn Analysis</h3>
             <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
             <span class="tag">ML</span>
           </div>
         </a>
 
         <!-- SQL EDA -->
         <a href="sql-cleaning-eda.html" class="project-card">
-          <div class="sql-code-box">
-┌───────────────────────────┬───────────────┐
-│ industry                  │ total_layoffs │
-├───────────────────────────┼───────────────┤
-│ Technology                │       152300  │
-│ Retail                    │        89200  │
-│ Finance                   │        56900  │
-└───────────────────────────┴───────────────┘
+          <div class="sql-block">
+┌────────────────────────┬───────────────┐
+│ industry               │ total_layoffs │
+├────────────────────────┼───────────────┤
+│ Technology             │      152300   │
+│ Retail                 │       89200   │
+│ Finance                │       56900   │
+└────────────────────────┴───────────────┘
 
-SELECT industry,
-       SUM(total_laid_off) AS total_layoffs
+SELECT industry, SUM(total_laid_off)
 FROM layoffs_cleaned
-GROUP BY industry
-ORDER BY total_layoffs DESC;
+GROUP BY industry;
           </div>
           <div class="project-body">
             <h3>SQL Data Cleaning & EDA</h3>
-            <p>SQL cleaning, standardization & exploratory reporting.</p>
             <span class="tag">SQL</span>
             <span class="tag">EDA</span>
           </div>
@@ -500,17 +409,21 @@ ORDER BY total_layoffs DESC;
     <!-- EDUCATION -->
     <section id="education" class="section">
       <h2>Education</h2>
-      <div class="grid-two">
-        <div class="card">
-          <div class="card-title">M.S. — Data Science & Analytics</div>
-          <div class="card-meta">Florida Atlantic University · Aug 2023 – May 2025</div>
-          <p class="card-meta">GPA: 3.86 / 4.0</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card" style="padding:1.2rem;">
+          <h3>Master of Science — Data Science & Analytics</h3>
+          <p>Florida Atlantic University · Aug 2023 – May 2025</p>
+          <p>GPA: 3.86 / 4.0</p>
         </div>
-        <div class="card">
-          <div class="card-title">B.Tech — Computer Science & IT</div>
-          <div class="card-meta">Siddhartha Institute · 2019 – 2023</div>
-          <p class="card-meta">GPA: 3.26 / 4.0</p>
+
+        <div class="project-card" style="padding:1.2rem;">
+          <h3>B.Tech — Computer Science & IT</h3>
+          <p>Siddhartha Institute of Engineering & Technology · 2019 – 2023</p>
+          <p>GPA: 3.26 / 4.0</p>
         </div>
+
       </div>
     </section>
 
@@ -518,8 +431,8 @@ ORDER BY total_layoffs DESC;
     <section id="contact" class="section">
       <h2>Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:praneethkumarreddy952@gmail.com">praneethkumarreddy952@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy">linkedin.com/in/praneethrdy</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu">github.com/praneethkumarreddypappu</a></p>
     </section>
 
   </main>
@@ -529,13 +442,13 @@ ORDER BY total_layoffs DESC;
     <div class="footer-inner">
       <div>
         <div class="footer-title">Praneeth Kumar Reddy Pappu</div>
-        <p>Data Analyst · SQL · Power BI · Excel · Python</p>
+        <p>Data Analyst | SQL · Power BI · Excel · Python</p>
       </div>
       <div>
         <div class="footer-title">Connect</div>
         <div class="footer-links">
-          <a href="https://github.com/praneethkumarreddypappu" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">LinkedIn</a>
+          <a href="https://github.com/praneethkumarreddypappu">GitHub</a>
+          <a href="https://linkedin.com/in/praneethrdy">LinkedIn</a>
           <a href="mailto:praneethkumarreddy952@gmail.com">Email</a>
         </div>
       </div>
@@ -545,14 +458,11 @@ ORDER BY total_layoffs DESC;
         <p>Open to Remote & Hybrid Roles</p>
       </div>
     </div>
+
     <div class="footer-bottom">
-      © <span id="year"></span> Praneeth Kumar Reddy Pappu · All rights reserved.
+      © 2025 Praneeth Kumar Reddy Pappu — All Rights Reserved.
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>

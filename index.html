@@ -11,302 +11,298 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", sans-serif;
-      background: #F5FAFA; /* soft clean background */
-      color: #0F172A;      /* charcoal navy */
+      background: #F7F5F2; /* Soft Sand Background */
+      color: #1A1A1A;
       line-height: 1.6;
     }
     a { text-decoration: none; color: inherit; }
 
-    /* ============ NAVBAR ============ */
+    /* COLORS */
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C6A667;
+      --gold-dark: #A88948;
+      --sand: #F7F5F2;
+      --card-border: #D8D2C4;
+      --text-dark: #1A1A1A;
+      --text-muted: #4B4B4D;
+    }
+
+    /* NAVBAR */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
       background: #FFFFFF;
-      border-bottom: 1px solid #DDE6E7;
+      border-bottom: 1px solid var(--card-border);
     }
     .nav {
       max-width: 1150px;
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
+      padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .nav-brand {
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: #0D9488; /* teal accent */
-      letter-spacing: 0.04em;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--charcoal);
     }
     .nav-links a {
       margin-left: 1.2rem;
       font-size: 0.92rem;
       font-weight: 500;
-      color: #475569;
+      color: var(--text-muted);
       position: relative;
       padding-bottom: 2px;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
     }
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0; bottom: 0;
-      width: 0; height: 2px;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
       border-radius: 999px;
-      background: #0D9488;
+      background: var(--gold);
       transition: width 0.18s ease;
-    }
-    .nav-links a:hover {
-      color: #0D9488;
     }
     .nav-links a:hover::after {
       width: 100%;
     }
 
-    /* ============ WRAPPER ============ */
     main {
       max-width: 1150px;
       margin: 0 auto 3rem;
       padding: 0 1.5rem;
     }
 
-    /* ============ HERO ============ */
+    /* HERO */
     .hero {
-      margin-top: 1.8rem;
-      background: linear-gradient(135deg, #0D9488, #0F766E);
+      margin-top: 2rem;
+      padding: 2rem;
       border-radius: 20px;
-      padding: 2rem 1.7rem;
-      color: white;
+      background: linear-gradient(135deg, #1A1A1A 0%, #C6A667 120%);
       display: flex;
-      gap: 2rem;
-      align-items: center;
       flex-wrap: wrap;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      align-items: center;
+      gap: 2rem;
+      color: white;
     }
-    .hero-text { flex: 1 1 320px; }
+    .hero-text { flex: 1 1 330px; }
+    
     .hero-kicker {
-      font-size: 0.8rem;
-      text-transform: uppercase;
+      font-size: 0.9rem;
       letter-spacing: 0.18em;
-      color: #CFFAFE;
-      margin-bottom: 0.4rem;
+      color: #E2D7C3;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
     .hero-title-line1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 0.2rem;
     }
     .hero-title-line2 {
-      font-size: 1rem;
+      font-size: 1.3rem;
       font-weight: 500;
-      color: #A7F3D0;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.8rem;
     }
     .hero-tagline {
       font-size: 1rem;
-      color: #ECFEFF;
-      margin-bottom: 0.5rem;
+      color: #F0EDE7;
+      margin-bottom: 0.6rem;
     }
     .hero-desc {
       font-size: 0.95rem;
-      color: #E0F2F1;
+      color: #E7E3DB;
       max-width: 520px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.3rem;
     }
+
     .hero-actions {
       display: flex;
+      gap: 0.9rem;
       flex-wrap: wrap;
-      gap: 0.8rem;
     }
     .btn-primary {
-      padding: 0.7rem 1.4rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 999px;
-      background: #FFFFFF;
-      color: #0D9488;
-      font-size: 0.9rem;
+      background: var(--gold);
+      color: var(--charcoal);
       font-weight: 600;
+      font-size: 0.92rem;
     }
     .btn-primary:hover {
-      background: #ECFEFF;
+      background: var(--gold-dark);
     }
     .btn-outline {
-      padding: 0.68rem 1.4rem;
+      padding: 0.72rem 1.5rem;
       border-radius: 999px;
       background: transparent;
-      border: 2px solid #A7F3D0;
-      color: #FFFFFF;
-      font-size: 0.9rem;
+      border: 1px solid #E8D9B7;
+      color: white;
+      font-size: 0.92rem;
       font-weight: 500;
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
     }
-    .hero-photo {
-      flex: 0 0 210px;
-      display: flex;
-      justify-content: center;
-    }
+
     .hero-photo img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid #FFFFFF;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      border: 4px solid #FFFFFF;
+      box-shadow: 0px 8px 22px rgba(0,0,0,0.35);
     }
 
-    /* ============ SECTIONS ============ */
+    /* SECTIONS */
     .section {
       background: #FFFFFF;
       border-radius: 18px;
-      border: 1px solid #DDE6E7;
-      padding: 1.6rem 1.7rem 1.9rem;
-      margin-top: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
     }
     .section h2 {
-      font-size: 1.27rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--charcoal);
       margin-bottom: 0.8rem;
-      color: #0F172A;
       position: relative;
     }
     .section h2::after {
       content: "";
       position: absolute;
-      left: 0; bottom: -4px;
-      width: 50px; height: 3px;
-      background: #0D9488;
+      left: 0;
+      bottom: -5px;
+      width: 50px;
+      height: 3px;
       border-radius: 999px;
+      background: var(--gold);
     }
     .section p {
-      font-size: 0.94rem;
-      color: #475569;
-      margin-bottom: 0.55rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
     }
 
-    /* ============ SKILLS ============ */
-    .skills-list p { margin-bottom: 0.35rem; }
-
-    /* ============ EXPERIENCE ============ */
+    /* CARDS & GRIDS */
     .grid-two {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.9rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.4rem;
+      margin-top: 1rem;
     }
     .card {
-      background: #F9FFFF;
-      border-radius: 14px;
-      border: 1px solid #C7D3D6;
-      padding: 1rem 1rem 1.1rem;
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      padding: 1.2rem;
     }
     .card-title {
       font-size: 1rem;
       font-weight: 600;
-      color: #0F172A;
-      margin-bottom: 0.3rem;
+      color: var(--charcoal);
     }
     .card-meta {
-      font-size: 0.82rem;
-      color: #64748B;
+      font-size: 0.85rem;
+      color: #706A60;
       margin-bottom: 0.5rem;
     }
     .card li {
-      font-size: 0.88rem;
-      color: #475569;
-      margin-bottom: 0.32rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
     }
 
-    /* ============ PROJECTS ============ */
+    /* PROJECT CARDS */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.3rem;
+      margin-top: 1.2rem;
     }
     .project-card {
       background: #FFFFFF;
       border-radius: 16px;
-      border: 1px solid #C7D3D6;
+      border: 1px solid var(--card-border);
       overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      color: inherit;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
     .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      border-color: #0D9488;
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     .project-image img {
       width: 100%;
-      height: 160px;
+      height: 170px;
       object-fit: cover;
     }
-    .project-body {
-      padding: 0.9rem 0.9rem 1rem;
-    }
-    .project-body h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #0F172A;
-    }
-    .project-body p {
-      font-size: 0.9rem;
-      color: #475569;
-      margin-bottom: 0.6rem;
-    }
     .tag {
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      background: #CCFBF1;
-      border: 1px solid #99F6E4;
+      background: #F0E7D0;
+      padding: 0.25rem 0.55rem;
       font-size: 0.72rem;
-      color: #0F766E;
+      border-radius: 999px;
+      color: #5A4D2C;
+      border: 1px solid #D6C5A3;
     }
 
-    /* SQL box */
+    /* SQL BOX */
     .sql-code-box {
-      background: #0F172A;
-      color: #E2E8F0;
+      background: #111;
+      color: #D7DADC;
       font-family: Consolas, monospace;
-      font-size: 0.78rem;
-      padding: 0.75rem;
-      height: 160px;
+      padding: 0.7rem;
+      height: 155px;
       white-space: pre;
+      overflow: hidden;
+      font-size: 0.78rem;
     }
 
-    /* ============ FOOTER ============ */
+    /* FOOTER */
     footer {
-      background: linear-gradient(135deg, #0F172A, #0D9488);
-      color: #E0F2F1;
-      padding: 2rem 1.5rem 1.5rem;
-      margin-top: 2.4rem;
+      background: #1A1A1A;
+      color: #EDEDED;
+      padding: 2rem 1.5rem;
+      margin-top: 2.5rem;
     }
     .footer-inner {
       max-width: 1150px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
       gap: 1.4rem;
     }
     .footer-title {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.45rem;
       color: #FFFFFF;
+      margin-bottom: 0.5rem;
     }
-    .footer-bottom {
-      max-width: 1150px;
-      margin: 1.1rem auto 0;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 0.7rem;
-      font-size: 0.82rem;
-      text-align: center;
+    .footer-links a {
+      margin-right: 0.8rem;
+      color: var(--gold);
+      font-size: 0.9rem;
     }
 
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #444;
+      font-size: 0.85rem;
+      color: #B0B0B0;
+    }
   </style>
 </head>
 
@@ -333,16 +329,15 @@
     <section class="hero">
       <div class="hero-text">
         <div class="hero-kicker">DATA ANALYST</div>
-        <h1 class="hero-title-line1">Hello, I'm Praneeth</h1>
-        <div class="hero-title-line2">Data Analyst — SQL | Power BI | Excel | Python</div>
 
-        <p class="hero-tagline">
-          I turn complex data into clear insights that drive smarter decisions.
-        </p>
+        <h1 class="hero-title-line1">Hello, I'm Praneeth</h1>
+        <div class="hero-title-line2">A Data Analyst</div>
+
+        <p class="hero-tagline">I turn complex data into clear, actionable insights.</p>
+
         <p class="hero-desc">
-          I work across SQL, Power BI, Excel, and Python to clean data, design KPIs, and build dashboards.
-          My focus is on clarity, trust in the numbers, and explaining results in a way that non-technical
-          stakeholders can understand and act on.
+          I work across SQL, Power BI, Excel, and Python to clean data, design KPIs, automate reporting,  
+          and build dashboards that support business decisions.
         </p>
 
         <div class="hero-actions">
@@ -361,25 +356,20 @@
       <h2>About Me</h2>
       <p>
         I'm a Data Analyst with a background in Computer Science and a Master's in Data Science & Analytics.
-        I enjoy going from raw, messy data to clean, structured tables, clear KPIs, and dashboards that people
-        actually use in their daily work.
+        I enjoy transforming raw datasets into structured tables, KPIs, and dashboards that drive real business value.
       </p>
       <p>
-        My projects span retail sales, layoffs analytics, fintech remittance data, IPL cricket, pizza sales,
-        and telecom churn. I like working end-to-end: loading and cleaning data with SQL and Excel, building
-        models and summaries in Python, and designing Power BI reports that tell a straightforward story.
+        My experience spans retail, fintech, IPL sports analytics, layoffs analysis, pizza sales, and telecom churn modeling.
       </p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
       <h2>Skills & Tools</h2>
-      <div class="skills-list">
-        <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, KPI design, basic DAX</p>
-        <p><strong>Databases & SQL:</strong> SQL Server, MySQL, joins, CTEs, window functions, data cleaning</p>
-        <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn (for churn modeling)</p>
-        <p><strong>Analytics Domains:</strong> Retail, layoffs, fintech, sports analytics (IPL), pizza sales, telecom churn</p>
-      </div>
+      <p><strong>Business Intelligence:</strong> Power BI, Excel dashboards, KPI design</p>
+      <p><strong>Databases & SQL:</strong> SQL Server, MySQL, joins, CTEs, window functions</p>
+      <p><strong>Python:</strong> Pandas, NumPy, Matplotlib, scikit-learn</p>
+      <p><strong>Domains:</strong> Retail, fintech, layoffs, sports analytics, pizza sales, churn modeling</p>
     </section>
 
     <!-- EXPERIENCE -->
@@ -391,24 +381,22 @@
           <div class="card-title">Data Analysis & Research Intern</div>
           <div class="card-meta">Ecological Servants Project · Remote · Jul 2025 – Present</div>
           <ul>
-            <li>Manage and analyze environmental program data (100+ entries/month) for reporting and strategic decisions.</li>
-            <li>Design interactive dashboards in Excel, Google Sheets, and Power BI to track program reach, engagement, and impact.</li>
-            <li>Write SQL queries to explore datasets, uncover trends, and support content and outreach decisions.</li>
-            <li>Monitor website performance (10,000+ monthly visitors) to understand top content, drop-offs, and device usage.</li>
-            <li>Support social engagement and grant research with data summaries on audience behavior and funder alignment.</li>
-            <li>Help streamline workflows and reporting processes, improving team efficiency and returning visitors.</li>
+            <li>Analyzed 100+ monthly program entries to support environmental reporting.</li>
+            <li>Created dashboards in Excel, Sheets, and Power BI.</li>
+            <li>Wrote SQL queries for exploration and insights.</li>
+            <li>Monitored website analytics (10,000+ visitors/month).</li>
+            <li>Assisted with social engagement & grant research.</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">Data Analyst Intern</div>
-          <div class="card-meta">ClobData · Bangalore, India · Jan 2022 – Jul 2023</div>
+          <div class="card-meta">ClobData · Bangalore · Jan 2022 – Jul 2023</div>
           <ul>
-            <li>Cleaned, validated, and standardized large datasets using Excel and SQL to improve data quality.</li>
-            <li>Assisted in designing and maintaining Power BI dashboards for sales, customer engagement, and operations KPIs.</li>
-            <li>Wrote SQL queries to extract, filter, and analyze data from relational databases for weekly and monthly reporting.</li>
-            <li>Worked with senior analysts and business teams to gather requirements and turn them into data-driven insights.</li>
-            <li>Documented workflows, report logic, and standards to support knowledge sharing and consistent reporting.</li>
+            <li>Cleaned and validated datasets using Excel and SQL.</li>
+            <li>Designed Power BI dashboards for sales, operations, and engagement KPIs.</li>
+            <li>Executed SQL queries for reporting and data extraction.</li>
+            <li>Worked with business teams for requirements & insights.</li>
           </ul>
         </div>
 
@@ -421,79 +409,63 @@
 
       <div class="projects-grid">
 
-        <!-- Retail -->
         <a href="retail-sales-analysis.html" class="project-card">
           <div class="project-image">
-            <img src="images/retail-dashboard.png.png" alt="Retail sales dashboard preview">
+            <img src="images/retail-dashboard.png.png" />
           </div>
           <div class="project-body">
-            <h3>Retail Sales Analysis & Dashboard (Excel)</h3>
-            <p>End-to-end retail reporting with KPIs, monthly trends, and an interactive Excel dashboard for products, regions, and reps.</p>
-            <div class="tag-list">
-              <span class="tag">Excel</span>
-              <span class="tag">Dashboard</span>
-            </div>
+            <h3>Retail Sales Analysis & Dashboard</h3>
+            <p>Excel dashboard with KPIs, reps, trends, and insights.</p>
+            <span class="tag">Excel</span>
+            <span class="tag">Dashboard</span>
           </div>
         </a>
 
-        <!-- Pizza -->
         <a href="pizza-sales-analysis.html" class="project-card">
           <div class="project-image">
-            <img src="images/pizza-dashboard.png.png" alt="Pizza sales dashboard preview">
+            <img src="images/pizza-dashboard.png.png" />
           </div>
           <div class="project-body">
-            <h3>Pizza Sales Analysis (SQL + Tableau)</h3>
-            <p>SQL and Tableau analysis of pizza orders to understand revenue, quantity, peak hours, and seasonal demand.</p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">Tableau</span>
-            </div>
+            <h3>Pizza Sales Analysis</h3>
+            <p>SQL + Tableau analytics for orders, revenue, and seasonality.</p>
+            <span class="tag">SQL</span>
+            <span class="tag">Tableau</span>
           </div>
         </a>
 
-        <!-- Fintech -->
         <a href="fintech-data-analysis.html" class="project-card">
           <div class="project-image">
-            <img src="images/fintech-dashboard.png.png" alt="Fintech analytics dashboard preview">
+            <img src="images/fintech-dashboard.png.png" />
           </div>
           <div class="project-body">
             <h3>Fintech Revenue Analytics</h3>
-            <p>ETL in Python & SQL, plus a Power BI dashboard for fee revenue, transaction volume, agent performance, and customer trends.</p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">Power BI</span>
-            </div>
+            <p>ETL, SQL, and BI dashboard for fee revenue & agents.</p>
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
           </div>
         </a>
 
-        <!-- IPL -->
         <a href="ipl-analysis.html" class="project-card">
           <div class="project-image">
-            <img src="images/ipl-dashboard.png.png" alt="IPL analytics dashboard preview">
+            <img src="images/ipl-dashboard.png.png" />
           </div>
           <div class="project-body">
             <h3>IPL Analytics Dashboard</h3>
-            <p>Power BI dashboard exploring team performance, player stats, points table, and season trends for IPL.</p>
-            <div class="tag-list">
-              <span class="tag">Power BI</span>
-              <span class="tag">Sports Analytics</span>
-            </div>
+            <p>Power BI analysis of IPL teams, players & seasons.</p>
+            <span class="tag">Power BI</span>
+            <span class="tag">Sports</span>
           </div>
         </a>
 
-        <!-- Churn -->
         <a href="customer-churn-analysis.html" class="project-card">
           <div class="project-image">
-            <img src="images/churn-dashboard.png.png" alt="Telecom churn dashboard preview">
+            <img src="images/churn-dashboard.png.png" />
           </div>
           <div class="project-body">
-            <h3>Telecom Customer Churn Analysis</h3>
-            <p>SQL ETL, Power BI dashboards, and a Random Forest model in Python to explain and predict customer churn.</p>
-            <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">ML</span>
-            </div>
+            <h3>Customer Churn Analysis</h3>
+            <p>SQL ETL, Power BI dashboards & Python model.</p>
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
           </div>
         </a>
 
@@ -515,15 +487,10 @@ GROUP BY industry
 ORDER BY total_layoffs DESC;
           </div>
           <div class="project-body">
-            <h3>SQL Data Cleaning & EDA (Layoffs)</h3>
-            <p>
-              Cleaned a layoffs dataset using SQL (duplicates, nulls, standardization),
-              then ran EDA to compare layoffs by industry, country, and time.
-            </p>
-            <div class="tag-list">
-              <span class="tag">SQL</span>
-              <span class="tag">EDA</span>
-            </div>
+            <h3>SQL Data Cleaning & EDA</h3>
+            <p>SQL cleaning, standardization & exploratory reporting.</p>
+            <span class="tag">SQL</span>
+            <span class="tag">EDA</span>
           </div>
         </a>
 
@@ -535,13 +502,13 @@ ORDER BY total_layoffs DESC;
       <h2>Education</h2>
       <div class="grid-two">
         <div class="card">
-          <div class="card-title">Master of Science — Data Science & Analytics</div>
-          <div class="card-meta">Florida Atlantic University · Boca Raton, FL · Aug 2023 – May 2025</div>
+          <div class="card-title">M.S. — Data Science & Analytics</div>
+          <div class="card-meta">Florida Atlantic University · Aug 2023 – May 2025</div>
           <p class="card-meta">GPA: 3.86 / 4.0</p>
         </div>
         <div class="card">
-          <div class="card-title">Bachelor of Technology — Computer Science & IT</div>
-          <div class="card-meta">Siddhartha Institute of Engineering & Technology · Puttur, India · 2019 – 2023</div>
+          <div class="card-title">B.Tech — Computer Science & IT</div>
+          <div class="card-meta">Siddhartha Institute · 2019 – 2023</div>
           <p class="card-meta">GPA: 3.26 / 4.0</p>
         </div>
       </div>
@@ -550,7 +517,6 @@ ORDER BY total_layoffs DESC;
     <!-- CONTACT -->
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>If you'd like to discuss roles, projects, or collaborations, feel free to reach out.</p>
       <p><strong>Email:</strong> <a href="mailto:praneethkumarreddy952@gmail.com">praneethkumarreddy952@gmail.com</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praneethrdy" target="_blank">linkedin.com/in/praneethrdy</a></p>
       <p><strong>GitHub:</strong> <a href="https://github.com/praneethkumarreddypappu" target="_blank">github.com/praneethkumarreddypappu</a></p>
@@ -563,7 +529,7 @@ ORDER BY total_layoffs DESC;
     <div class="footer-inner">
       <div>
         <div class="footer-title">Praneeth Kumar Reddy Pappu</div>
-        <p>Data Analyst focused on SQL, dashboards, and clear business insights.</p>
+        <p>Data Analyst · SQL · Power BI · Excel · Python</p>
       </div>
       <div>
         <div class="footer-title">Connect</div>
@@ -574,7 +540,7 @@ ORDER BY total_layoffs DESC;
         </div>
       </div>
       <div>
-        <div class="footer-title">Based In</div>
+        <div class="footer-title">Location</div>
         <p>Miami / Boca Raton, FL</p>
         <p>Open to Remote & Hybrid Roles</p>
       </div>
